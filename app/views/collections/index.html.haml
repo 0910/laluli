@@ -1,0 +1,22 @@
+.row.title
+	.col-md-12
+		= link_to('Collections', collections_path)
+.row
+	- @collections.each do |collection|
+		.col-md-3
+			- if collection.images.empty?
+				= link_to(collection_path(collection)) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								#{collection.name}
+
+			- else
+				- collection.images.each do |image|
+					- if image.cover == true
+						= link_to(collection_path(collection)) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										#{collection.name}
+

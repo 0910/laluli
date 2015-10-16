@@ -1,0 +1,262 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body{
+	font-family: 'Montserrat';
+	color: #ff8fcf;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin:0;
+}
+.container{
+	width: 85%;
+}
+.menu{
+	position: relative;
+	z-index: 900;
+	width: 100%;
+	top: 0;
+	padding:30px 0;
+	a{
+		display: block;
+		color: #ff8fcf;
+	}
+	.logo{
+		font-size: 3em;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	.toggle-nav{
+		font-size: 3em;
+		text-align: right;
+		cursor: pointer;
+		img{
+			width: 50%;
+			height: auto;
+		}
+	}
+}
+.navigation{
+	background: rgb(255,143,207);
+	background: -moz-linear-gradient(45deg, rgba(255,143,207,0.8) 0%, rgba(255,126,150,0.8) 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,143,207,0.8)), color-stop(100%,rgba(255,126,150,0.8)));
+	background: -webkit-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+	background: -o-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+	background: -ms-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+	background: linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8fcf', endColorstr='#ff7e96',GradientType=1 );
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: -9999;
+	overflow: hidden;
+	-webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    a{
+    	color: #fff;
+    	width: 100%;
+    	height: (100vh / 6);
+    	display: block;
+    	text-align: center;
+    	font-size: 3em;
+    	-webkit-transition: 500ms ease all;
+    	transition: 500ms ease all;
+    	position: relative;
+    	opacity: 0;
+    	line-height: 2.8;
+    }
+    a.toggle-nav{
+		cursor: pointer;
+	    font-size: 3em;
+	    position: absolute;
+	    right: 45px;
+	    text-align: right;
+	    top: 0;
+	    width: auto;
+	}
+    a:hover{
+		text-decoration: none;
+	}
+    a:nth-child(odd){
+    	left: -9999px;
+    }
+    a:nth-child(even){
+    	right: -9999px;
+    }
+}
+.navigation.show{
+	opacity: 1;
+	z-index: 10000;
+	a{
+		opacity: 1;
+	}
+	a:nth-child(odd){
+    	left: 0;
+    }
+    a:nth-child(even){
+    	right: 0;
+    }
+}
+.content{
+	margin-top: 30px;
+}
+.title{
+	text-align: center;
+	margin: -100px 0 0 0;
+	float: left;
+	width: 100%;
+	a{
+		font-size: 1.5em;
+		margin-bottom: 25px;
+		color: #ff7e96;
+	}
+	p{
+		font-size: 1.5em;
+		margin-bottom: 25px;
+		margin-left: .5em;
+	}
+}
+.thumbs{
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+.viewer{
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+body.index{
+	.item{
+		position: relative;
+		margin-bottom: 30px;
+		vertical-align: middle;
+		width: 100%;
+		height:390px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		.over{
+			background: rgb(255,143,207);
+			background: -moz-linear-gradient(45deg, rgba(255,143,207,0.8) 0%, rgba(255,126,150,0.8) 100%);
+			background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,143,207,0.8)), color-stop(100%,rgba(255,126,150,0.8)));
+			background: -webkit-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: -o-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: -ms-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8fcf', endColorstr='#ff7e96',GradientType=1 );
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			opacity: 0;
+			-webkit-transition: 300ms ease all;
+	    	transition: 300ms ease all;
+			p{
+				color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				font-size: 2em;
+				line-height: 1;
+				transform:translate(-50%,-50%);
+			}
+		}
+	}
+	.item:hover{
+		.over{
+			opacity: 1;
+		}
+	}
+}
+body.show{
+	.item{
+		position: relative;
+		margin-bottom: 30px;
+		vertical-align: middle;
+		width: 100%;
+		height:195px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		.over{
+			background: rgb(255,143,207);
+			background: -moz-linear-gradient(45deg, rgba(255,143,207,0.8) 0%, rgba(255,126,150,0.8) 100%);
+			background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,143,207,0.8)), color-stop(100%,rgba(255,126,150,0.8)));
+			background: -webkit-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: -o-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: -ms-linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			background: linear-gradient(45deg, rgba(255,143,207,0.8) 0%,rgba(255,126,150,0.8) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8fcf', endColorstr='#ff7e96',GradientType=1 );
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			opacity: 0;
+			-webkit-transition: 300ms ease all;
+	    	transition: 300ms ease all;
+			p{
+				color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				font-size: 2em;
+				line-height: 1;
+				transform:translate(-50%,-50%);
+			}
+		}
+	}
+	.item:hover{
+		.over{
+			opacity: 1;
+		}
+	}
+	.slide{
+		position: relative;
+		margin-bottom: 30px;
+		vertical-align: middle;
+		width: 100%;
+		height:870px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+.bx-wrapper .bx-controls-direction a{
+    line-height: 1.1;
+}
+.bx-wrapper{
+    margin: 0;
+}
+.bx-wrapper .bx-viewport {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    left: 0px;
+}
+.bx-wrapper ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer{
+	width: 100%;
+	bottom: 0;
+	padding: 30px 0;
+	a{
+		color: #ff8fcf;
+		margin-right: 1em;
+	}
+	a:last-child{
+		margin-right: 0px;
+	}
+}

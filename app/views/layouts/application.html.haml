@@ -1,0 +1,50 @@
+!!!
+%html
+	%head
+		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+			%title
+				La Luli
+			= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+			= javascript_include_tag 'application', 'data-turbolinks-track' => true
+			= csrf_meta_tags
+			= yield(:head)
+
+	%body{:class => "#{controller_name} #{action_name}"}
+		.navigation
+			%a
+				Home
+			%a
+				About
+			= link_to('Styling', stylings_path)
+			= link_to('Interior Design', interiors_path)
+			= link_to('Collections', collections_path)
+			%a
+				Music/Video
+			%a.toggle-nav
+				= image_tag('close.png')
+		.container
+			.row
+				.menu
+					.col-md-1
+						%a.logo
+							= image_tag('logo.png')
+					.col-md-10
+
+					.col-md-1
+						%a.toggle-nav
+							= image_tag('menu.png')
+			.row.content
+				= yield
+			.row.footer
+				.col-md-6
+					.row
+						%a
+							Facebook
+						%a
+							Instagram
+						%a
+							Youtube
+				.col-md-6
+					.row
+						%a.pull-right
+							hello@laluli.com

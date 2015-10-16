@@ -1,0 +1,22 @@
+.row.title
+	.col-md-12
+		= link_to('Interiors', interiors_path)
+.row
+	- @interiors.each do |interior|
+		.col-md-3
+			- if interior.images.empty?
+				= link_to(interior_path(interior)) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								#{interior.name}
+
+			- else
+				- interior.images.each do |image|
+					- if image.cover == true
+						= link_to(interior_path(interior)) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										#{interior.name}
+

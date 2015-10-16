@@ -1,0 +1,27 @@
+.row.title
+	.col-md-12
+		.row
+			= link_to('Stylings', stylings_path)
+		.row
+			= link_to('Lookbook', lookbooks_stylings_path)
+			= link_to('Performances', performances_stylings_path)
+			= link_to('Personal', personal_stylings_path)
+.row
+	- @stylings.each do |styling|
+		.col-md-3
+			- if styling.images.empty?
+				= link_to(styling_path(styling)) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								#{styling.name}
+
+			- else
+				- styling.images.each do |image|
+					- if image.cover == true
+						= link_to(styling_path(styling)) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										#{styling.name}
+

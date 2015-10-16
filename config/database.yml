@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  reconnect: true
+  database: laluli_development
+  username: root
+  password: 
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
+  database: laluli_production
+  pool: 5
+  username: root
+  password: pranayama.777
+  socket: /var/run/mysqld/mysqld.sock
+  port: 3306
