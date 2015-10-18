@@ -1,0 +1,72 @@
+.row
+	.col-md-12
+		.splash
+.row
+	- @collections.each do |collection|
+		.col-md-3
+			- if collection.images.empty?
+				= link_to(collections_path) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								Collections
+
+			- else
+				- collection.images.each do |image|
+					- if image.cover == true
+						= link_to(collections_path) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										Collections
+	- @interiors.each do |interior|
+		.col-md-3
+			- if interior.images.empty?
+				= link_to(interiors) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								Interiors
+
+			- else
+				- interior.images.each do |image|
+					- if image.cover == true
+						= link_to(interiors_path) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										Interiors
+	- @stylings.each do |styling|
+		.col-md-3
+			- if styling.images.empty?
+				= link_to(stylings_path) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								Styling
+
+			- else
+				- styling.images.each do |image|
+					- if image.cover == true
+						= link_to(stylings_path) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										Styling
+	- @releases.each do |release|
+		.col-md-3
+			- if release.images.empty?
+				= link_to(releases_path) do
+					.item{:style => "background-image: url(image-not-available.jpg)"}
+						.over
+							%p
+								Music/Videos
+
+			- else
+				- release.images.each do |image|
+					- if image.cover == true
+						= link_to(releases_path) do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										Music/Videos

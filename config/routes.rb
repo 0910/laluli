@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   get 'releases/index'
 
   get 'releases/show'
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'interiors/show'
 
+  root to: "home#index"
+  
   resources :stylings, only: [:show, :index] do
     collection do
       get "lookbooks"

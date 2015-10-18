@@ -3,7 +3,7 @@
 		= link_to('Interiors', interiors_path)
 .row
 	- @interiors.each do |interior|
-		.col-md-3
+		.col-md-4
 			- if interior.images.empty?
 				= link_to(interior_path(interior)) do
 					.item{:style => "background-image: url(image-not-available.jpg)"}

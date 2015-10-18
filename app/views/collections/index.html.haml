@@ -3,7 +3,7 @@
 		= link_to('Collections', collections_path)
 .row
 	- @collections.each do |collection|
-		.col-md-3
+		.col-md-4
 			- if collection.images.empty?
 				= link_to(collection_path(collection)) do
 					.item{:style => "background-image: url(image-not-available.jpg)"}

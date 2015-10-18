@@ -1,9 +1,8 @@
-.row.title
-	.col-md-12
-		= link_to('Collections', collections_path)
-		%p #{@collection.name}
 .row
-	.col-md-6.thumbs
+	.title.col-md-12
+		= link_to('Collections.', collections_path)
+		%p #{@collection.name}
+	.col-md-12.thumbs
 		.row#bx-pager
 			- if @collection.images.empty?
 				%a.col-md-3
@@ -17,15 +16,6 @@
 									+
 
 							
-	.col-md-6.viewer
-		%ul.bxslider
-			- if @collection.images.empty?
-				%li
-					.slide{:style => "background-image: url(image-not-available.jpg)"}
-			- else
-				- @collection.images.each do |image|
-					%li
-						.slide{:style => "background-image: url(#{image.file.url(:large)})"}
 :javascript
 	$('.bxslider').bxSlider({
 		pagerCustom: '#bx-pager'

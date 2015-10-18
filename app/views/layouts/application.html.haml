@@ -22,29 +22,36 @@
 				Music/Video
 			%a.toggle-nav
 				= image_tag('close.png')
+		.row
+			.menu
+				.col-md-2
+					= link_to(root_path, class: 'logo') do
+						= image_tag('logo.png')
+				.col-md-2
+					%a
+						About
+				.col-md-2
+					= link_to('Styling', stylings_path)
+				.col-md-2	
+					= link_to('Interior Design', interiors_path)
+				.col-md-2	
+					= link_to('Collections', collections_path)
+				.col-md-2
+					%a
+						Music/Videos
 		.container
-			.row
-				.menu
-					.col-md-1
-						%a.logo
-							= image_tag('logo.png')
-					.col-md-10
-
-					.col-md-1
-						%a.toggle-nav
-							= image_tag('menu.png')
 			.row.content
 				= yield
-			.row.footer
-				.col-md-6
-					.row
-						%a
-							Facebook
-						%a
-							Instagram
-						%a
-							Youtube
-				.col-md-6
-					.row
-						%a.pull-right
-							hello@laluli.com
+		.footer
+			.col-md-6
+				.row
+					%a
+						Facebook
+					%a
+						Instagram
+					%a
+						Youtube
+			.col-md-6
+				.row
+					%a.pull-right
+						hello@laluli.com

@@ -8,7 +8,7 @@
 			= link_to('Personal', personal_stylings_path)
 .row
 	- @stylings.each do |styling|
-		.col-md-3
+		.col-md-4
 			- if styling.images.empty?
 				= link_to(styling_path(styling)) do
 					.item{:style => "background-image: url(image-not-available.jpg)"}
