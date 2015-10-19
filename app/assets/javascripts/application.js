@@ -17,4 +17,5 @@
 //= require bootstrap
 //= require bxslider
 //= require magic
+//= require lightbox-bootstrap
 //= require_tree .

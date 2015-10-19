@@ -289,3 +289,23 @@ body.show{
 		margin-right: 0px;
 	}
 }
+
+.modal-content {
+    background-clip: padding-box;
+    background-color: transparent;
+    border: medium none;
+    border-radius: 6px;
+    box-shadow: none;
+    outline: 0 none;
+    position: relative;
+}
+.modal-backdrop{
+	background-color: #fff;
+}
+.modal-backdrop.in{
+	opacity: 0.9;
+}
+.modal-header{
+	border:none;
+}
+

@@ -1,31 +1,21 @@
-.row.title
-	.col-md-12
-		= link_to('Stylings', stylings_path)
-		%p #{@styling.name}
 .row
-	.col-md-6.thumbs
+	.title.col-md-12
+		= link_to('Stylings.', stylings_path)
+		%p #{@styling.name}
+	.col-md-12.thumbs
 		.row#bx-pager
 			- if @styling.images.empty?
-				%a.col-md-3
+				= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
 					.item{:style => "background-image: url(image-not-available.jpg)"}
 			- else
 				- @styling.images.each do |image|
-					%a.col-md-3
-						.item{:style => "background-image: url(#{image.file.url(:large)})"}
+					= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ title:@styling.name, toggle:'lightbox', gallery:'multiimages' } do
+						.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 							.over
 								%p
 									+
 
 							
-	.col-md-6.viewer
-		%ul.bxslider
-			- if @styling.images.empty?
-				%li
-					.slide{:style => "background-image: url(image-not-available.jpg)"}
-			- else
-				- @styling.images.each do |image|
-					%li
-						.slide{:style => "background-image: url(#{image.file.url(:large)})"}
 :javascript
 	$('.bxslider').bxSlider({
 		pagerCustom: '#bx-pager'

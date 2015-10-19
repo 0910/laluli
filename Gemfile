@@ -35,6 +35,7 @@ gem 'paperclip'
 gem 'geocoder'
 gem 'friendly_id'
 gem 'country_select'
+gem 'lightbox-bootstrap-rails'
 
 
 group :development do

@@ -7,6 +7,7 @@ ready = ->
       # Do things on Nav Open
       $('.navigation').addClass 'show'
     return
+  $('a.fancybox').fancybox()
 
   $ ->
 
