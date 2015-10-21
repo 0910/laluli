@@ -7,9 +7,16 @@ ready = ->
       # Do things on Nav Open
       $('.navigation').addClass 'show'
     return
-  $('a.fancybox').fancybox()
-
   $ ->
+    $(document).on 'page:change', ->
+      $('#primary-content').addClass 'animated'
+      $('#primary-content').addClass 'fadeInUp'
+
+      return
+    $(document).on 'page:fetch', ->
+      $('#primary-content').addClass 'animated'
+      $('#primary-content').addClass 'fadeOutUp'
+      return
 
     # Toggle Nav on Click
     $('.toggle-nav').click (event) ->

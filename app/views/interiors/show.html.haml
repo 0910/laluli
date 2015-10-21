@@ -1,7 +1,8 @@
-.row
-	.title.col-md-12
+.row.title
+	.inside
 		= link_to('Interiors.', interiors_path)
 		%p #{@interior.name}
+.row
 	.col-md-12.thumbs
 		.row#bx-pager
 			- if @interior.images.empty?
@@ -9,7 +10,7 @@
 					.item{:style => "background-image: url(image-not-available.jpg)"}
 			- else
 				- @interior.images.each do |image|
-					= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ title:@interior.name, toggle:'lightbox', gallery:'multiimages' } do
+					= link_to "#{image.file.url(:large)}", class: 'col-md-3', data:{ title:@interior.name, toggle:'lightbox', gallery:'multiimages' } do
 						.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 							.over
 								%p

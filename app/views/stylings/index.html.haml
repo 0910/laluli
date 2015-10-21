@@ -1,11 +1,21 @@
 .row.title
-	.col-md-12
+	.inside
 		.row
-			= link_to('Stylings', stylings_path)
-		.row
-			= link_to('Lookbook', lookbooks_stylings_path)
-			= link_to('Performances', performances_stylings_path)
-			= link_to('Personal', personal_stylings_path)
+			= link_to('Stylings.', stylings_path)
+			- if @lookbook
+				= link_to('Lookbook', lookbooks_stylings_path, class: 'sub active')
+			- else
+				= link_to('Lookbook', lookbooks_stylings_path, class: 'sub')
+
+			- if @performances
+				= link_to('Performances', performances_stylings_path, class: 'sub active')
+			- else
+				= link_to('Performances', performances_stylings_path, class: 'sub')
+
+			- if @personal
+				= link_to('Personal', personal_stylings_path, class: 'sub active')
+			- else
+				= link_to('Personal', personal_stylings_path, class: 'sub')
 .row
 	- @stylings.each do |styling|
 		.col-md-4
