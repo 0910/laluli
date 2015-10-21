@@ -1,7 +1,9 @@
-.row
-	.title.col-md-12
-		= link_to('Stylings.', stylings_path)
+.row.title
+	.inside
+		= link_to('Styling.', stylings_path)
 		%p #{@styling.name}
+		= link_to("&#8592".html_safe + ' Back', stylings_path, class: 'pull-right')
+.row
 	.col-md-12.thumbs
 		.row#bx-pager
 			- if @styling.images.empty?
@@ -9,11 +11,11 @@
 					.item{:style => "background-image: url(image-not-available.jpg)"}
 			- else
 				- @styling.images.each do |image|
-					= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ title:@styling.name, toggle:'lightbox', gallery:'multiimages' } do
+					= link_to "#{image.file.url(:large)}", class: 'col-md-3', data:{ title:@styling.name, toggle:'lightbox', gallery:'multiimages' } do
 						.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 							.over
 								%p
-									+
+									ZOOM IT
 
 							
 :javascript

@@ -13,15 +13,27 @@
 		.navigation
 			.vcenter
 				= link_to('Home', root_path)
-				%a(href='#about')
+				%a.toggle-about(href='#')
 					About
 				= link_to('Styling', stylings_path)
 				= link_to('Interior Design', interiors_path)
 				= link_to('Collections', collections_path)
 				%a
-					Music/Video
+					Music&Video
 			%a.toggle-nav
 				= image_tag('close.png')
+		.about
+			.col-md-6
+			.col-md-6
+				.row
+					%a
+						Facebook
+					%a
+						Instagram
+					%a
+						Youtube
+					%a
+						hello@laluli.com
 		.menu
 			.col-md-1
 				= link_to(root_path, class: 'logo') do
@@ -33,16 +45,3 @@
 		.container
 			.row.content#primary-content
 				= yield
-		.footer
-			.col-md-6
-				.row
-					%a
-						Facebook
-					%a
-						Instagram
-					%a
-						Youtube
-			.col-md-6
-				.row
-					%a.pull-right
-						hello@laluli.com

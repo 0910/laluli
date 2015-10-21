@@ -1,6 +1,7 @@
 .row.title
 	.inside
 		= link_to('Collections.', collections_path)
+		= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
 .row
 	- @collections.each do |collection|
 		.col-md-4

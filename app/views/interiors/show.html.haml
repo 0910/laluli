@@ -2,6 +2,7 @@
 	.inside
 		= link_to('Interiors.', interiors_path)
 		%p #{@interior.name}
+		= link_to("&#8592".html_safe + ' Back', interiors_path, class: 'pull-right')
 .row
 	.col-md-12.thumbs
 		.row#bx-pager
@@ -14,7 +15,7 @@
 						.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 							.over
 								%p
-									+
+									ZOOM IT
 
 							
 :javascript
