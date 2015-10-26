@@ -12,14 +12,18 @@
 	%body{:class => "#{controller_name} #{action_name}"}
 		.navigation
 			.vcenter
-				= link_to('Home', root_path)
-				%a.toggle-about(href='#')
-					About
-				= link_to('Styling', stylings_path)
-				= link_to('Interior Design', interiors_path)
-				= link_to('Collections', collections_path)
-				%a
-					Music&Video
+				= link_to(root_path) do
+					= image_tag('menu_home.png')
+				= link_to(root_path) do
+					= image_tag('menu_about.png')
+				= link_to(stylings_path) do
+					= image_tag('menu_styling.png')
+				= link_to(interiors_path) do
+					= image_tag('menu_interior.png')
+				= link_to(collections_path) do
+					= image_tag('menu_collections.png')
+				= link_to(root_path) do
+					= image_tag('menu_music.png')
 			%a.toggle-nav
 				= image_tag('close.png')
 		.about

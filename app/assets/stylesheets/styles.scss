@@ -4,7 +4,6 @@ html{
 	height: 100%;
 }
 body{
-	background-image: image-url('bg.jpg');
 	font-family: 'Source Sans Pro';
 	font-weight: 300;
 	color: #ff8fcf;
@@ -18,6 +17,23 @@ body{
 a:focus {
     outline: medium none;
 }
+/* backgrounds */
+
+body.home{
+}
+body.stylings{
+	background-image: image-url('flowers.jpg');
+}
+body.collections{
+	background-image: image-url('sky.jpg');
+}
+body.interiors{
+	background-image: image-url('red.jpg');
+}
+body.music{
+	background-image: image-url('sky.jpg');
+}
+
 body.home.index{
 	.bx-wrapper .bx-controls-direction a{
 		margin-top: -56px;
@@ -204,9 +220,6 @@ ul{
 			height: auto;
 		}
 	}
-    a:hover{
-		text-decoration: line-through;
-	}
     a:nth-child(odd){
     	left: -9999px;
     }
@@ -229,6 +242,10 @@ ul{
     a.toggle-nav{
     	right:57px;
     }
+    a:hover{
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
 }
 .about{
 	background: rgba(203,119,124, 0.95);
