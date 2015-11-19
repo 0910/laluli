@@ -3,11 +3,11 @@ ready = ->
     if $('.navigation').hasClass('show')
       # Do things on Nav Close
       $('.navgation').removeClass 'show'
-      $('.about').removeClass 'show'
+      $('#jquery_jplayer_menu').jPlayer('stop');
     else
       # Do things on Nav Open
       $('.navigation').addClass 'show'
-      $('.about').removeClass 'show'
+      $('#jquery_jplayer_menu').jPlayer('play');
     return
   toggleAbout = ->
     if $('.about').hasClass('show')

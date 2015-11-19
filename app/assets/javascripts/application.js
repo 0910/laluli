@@ -18,4 +18,5 @@
 //= require bxslider
 //= require magic
 //= require lightbox-bootstrap
+//= require jquery.jplayer
 //= require_tree .

@@ -1,61 +1,18 @@
-.row.title
-	.inside
-.row
-	.col-md-12
-		%ul.slider
-			%li
-				.splash.bg-styling	
-					.row
-						.col-md-8.col-md-offset-2
-							%h1
-								LA LULI IS A MULTIDISCIPLINARY
-								ARTIST FROM BUENOS AIRES
-								BASED IN NYC.
-							= link_to(stylings_path) do
-								%button.btn.btn-default
-									DISCOVER STYLING
-			%li
-				.splash.bg-collections
-					.row
-						.col-md-8.col-md-offset-2
-							%h1
-								LA LULI IS A MULTIDISCIPLINARY
-								ARTIST FROM BUENOS AIRES
-								BASED IN NYC.
-							= link_to(collections_path) do
-								%button.btn.btn-default
-									DISCOVER COLLECTIONS
-			%li
-				.splash.bg-interior
-					.row
-						.col-md-8.col-md-offset-2
-							%h1
-								LA LULI IS A MULTIDISCIPLINARY
-								ARTIST FROM BUENOS AIRES
-								BASED IN NYC.
-							= link_to(interiors_path) do
-								%button.btn.btn-default
-									DISCOVER INTERIOR DESIGN
-			%li
-				.splash.bg-music
-					.row
-						.col-md-8.col-md-offset-2
-							%h1
-								LA LULI IS A MULTIDISCIPLINARY
-								ARTIST FROM BUENOS AIRES
-								BASED IN NYC.
-							= link_to(root_path) do	
-								%button.btn.btn-default
-									DISCOVER MUSIC & VIDEOS
+#jp_container_1.jp-video
+	#jquery_jplayer_1
+
 :javascript
-	$(function() {
-		$('.slider').bxSlider({
-			auto: true,
-			pause: 5000,
-			useCSS:true,
-			mode: 'horizontal',
-			easing: 'cubic-bezier(.74,.14,.44,.71)',
-				nextText: '→',
-				prevText: '←'
-		});
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function () {
+			$(this).jPlayer("setMedia", {
+				m4v: "assets/intro.mp4",
+				webmv: "assets/intro.webm",
+				poster: "assets/intro.jpg"
+			}).jPlayer("play");
+		},
+		swfPath: "/js",
+		supplied: "webmv, mp4"
+	});
+	$("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event){
+		$('.toggle-nav').click();
 	});

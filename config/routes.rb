@@ -1,22 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
-  get 'releases/index'
-
-  get 'releases/show'
-
-  get 'collections/index'
-
-  get 'collections/show'
-
-  get 'stylings/index'
-
-  get 'stylings/show'
-
-  get 'interiors/index'
-
-  get 'interiors/show'
+  get 'about/index'
 
   root to: "home#index"
   

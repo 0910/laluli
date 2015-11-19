@@ -1,24 +1,39 @@
-.row.title
-	.inside
-		= link_to('Styling.', stylings_path)
-		%p #{@styling.name}
-		= link_to("&#8592".html_safe + ' Back', stylings_path, class: 'pull-right')
-.row
-	.col-md-12.thumbs
-		.row#bx-pager
-			- if @styling.images.empty?
-				= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
-					.item{:style => "background-image: url(image-not-available.jpg)"}
-			- else
-				- @styling.images.each do |image|
-					= link_to "#{image.file.url(:large)}", class: 'col-md-3', data:{ title:@styling.name, toggle:'lightbox', gallery:'multiimages' } do
-						.item{:style => "background-image: url(#{image.file.url(:medium)})"}
-							.over
-								%p
-									ZOOM IT
+#jp_container_1.jp-video
+	#jquery_jplayer_1
+.container
+	.row.content#primary-content
+		.container
+			.row.content#primary-content
+				.row.title
+					.inside
+						= link_to('Styling.', stylings_path)
+						%p #{@styling.name}
+						= link_to("&#8592".html_safe + ' Back', stylings_path, class: 'pull-right')
+				.row
+					.col-md-12.thumbs
+						.row#bx-pager
+							- if @styling.images.empty?
+								= link_to "#{image.file.url(:medium)}", class: 'col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
+									.item{:style => "background-image: url(image-not-available.jpg)"}
+							- else
+								- @styling.images.each do |image|
+									= link_to "#{image.file.url(:large)}", class: 'col-md-3', data:{ title:@styling.name, toggle:'lightbox', gallery:'multiimages' } do
+										.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+											.over
+												%p
+													ZOOM IT
 
 							
 :javascript
-	$('.bxslider').bxSlider({
-		pagerCustom: '#bx-pager'
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function () {
+			$(this).jPlayer("setMedia", {
+				m4v: "/assets/stylings.mp4",
+				webmv: "/assets/stylings.webm",
+				poster: "/assets/stylings.jpg"
+			}).jPlayer("play");
+		},
+		swfPath: "/js",
+		supplied: "webmv, mp4",
+		loop: true
 	});

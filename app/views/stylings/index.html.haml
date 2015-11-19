@@ -1,37 +1,54 @@
-.row.title
-	.inside
-		= link_to('Styling.', stylings_path)
-		- if @lookbook
-			= link_to('Lookbook', lookbooks_stylings_path, class: 'sub active')
-		- else
-			= link_to('Lookbook', lookbooks_stylings_path, class: 'sub')
+#jp_container_1.jp-video
+	#jquery_jplayer_1
+.container
+	.row.content#primary-content
+		.row.title
+			.inside
+				= link_to('Styling.', stylings_path)
+				- if @lookbook
+					= link_to('Lookbook', lookbooks_stylings_path, class: 'sub active')
+				- else
+					= link_to('Lookbook', lookbooks_stylings_path, class: 'sub')
 
-		- if @performances
-			= link_to('Performances', performances_stylings_path, class: 'sub active')
-		- else
-			= link_to('Performances', performances_stylings_path, class: 'sub')
+				- if @performances
+					= link_to('Performances', performances_stylings_path, class: 'sub active')
+				- else
+					= link_to('Performances', performances_stylings_path, class: 'sub')
 
-		- if @personal
-			= link_to('Personal', personal_stylings_path, class: 'sub active')
-		- else
-			= link_to('Personal', personal_stylings_path, class: 'sub')
-		= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
-.row
-	- @stylings.each do |styling|
-		.col-md-4
-			- if styling.images.empty?
-				= link_to(styling_path(styling)) do
-					.item{:style => "background-image: url(image-not-available.jpg)"}
-						.over
-							%p
-								#{styling.name}
-
-			- else
-				- styling.images.each do |image|
-					- if image.cover == true
+				- if @personal
+					= link_to('Personal', personal_stylings_path, class: 'sub active')
+				- else
+					= link_to('Personal', personal_stylings_path, class: 'sub')
+				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
+		.row
+			- @stylings.each do |styling|
+				.col-md-4
+					- if styling.images.empty?
 						= link_to(styling_path(styling)) do
-							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+							.item{:style => "background-image: url(image-not-available.jpg)"}
 								.over
 									%p
 										#{styling.name}
+
+					- else
+						- styling.images.each do |image|
+							- if image.cover == true
+								= link_to(styling_path(styling)) do
+									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+										.over
+											%p
+												#{styling.name}
+:javascript
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function () {
+			$(this).jPlayer("setMedia", {
+				m4v: "assets/stylings.mp4",
+				webmv: "assets/stylings.webm",
+				poster: "assets/stylings.jpg"
+			}).jPlayer("play");
+		},
+		swfPath: "/js",
+		supplied: "webmv, mp4",
+		loop: true
+	});
 

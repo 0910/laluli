@@ -1,0 +1,26 @@
+= vider_tag 'assets/releases.mp4', position: '100% 100%'
+.container
+	.row.content#primary-content
+		.row.title
+			.inside
+				= link_to('Music.', releases_path)
+				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
+		.row
+			- @releases.each do |release|
+				.col-md-4
+					- if release.images.empty?
+						= link_to(release_path(release)) do
+							.item{:style => "background-image: url(image-not-available.jpg)"}
+								.over
+									%p
+										#{release.name}
+
+					- else
+						- release.images.each do |image|
+							- if image.cover == true
+								= link_to(release_path(release)) do
+									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+										.over
+											%p
+												#{release.name}
+
