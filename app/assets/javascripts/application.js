@@ -19,4 +19,6 @@
 //= require magic
 //= require lightbox-bootstrap
 //= require jquery.jplayer
+//= require soundcloud.player.api
+//= require sc-player
 //= require_tree .

@@ -1,3 +1,20 @@
 // Place all the styles related to the releases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.releases.show{
+	.release-art{
+		img{
+			width: 90%;
+			height: auto;
+		}
+	}
+	.release-info{
+		h1{
+			color: #fff;
+			font-size: 2.5em;
+			font-weight: 100;
+			margin-top: 0;
+		}
+	}
+}

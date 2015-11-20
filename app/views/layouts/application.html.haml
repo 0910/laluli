@@ -22,7 +22,7 @@
 					= image_tag('menu_interior.png')
 				= link_to(collections_path) do
 					= image_tag('menu_collections.png')
-				= link_to(root_path) do
+				= link_to(releases_path) do
 					= image_tag('menu_music.png')
 			%a.toggle-nav(href="#")
 			#jp_container_menu.jp-video
@@ -38,9 +38,9 @@
 			$("#jquery_jplayer_menu").jPlayer({
 				ready: function () {
 					$(this).jPlayer("setMedia", {
-						m4v: "assets/menu.mp4",
-						webmv: "assets/menu.webm",
-						poster: "assets/menu.jpg"
+						m4v: "/assets/menu.mp4",
+						webmv: "/assets/menu.webm",
+						poster: "/assets/menu.jpg"
 					});
 				},
 				swfPath: "/js",

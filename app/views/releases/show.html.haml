@@ -1,0 +1,39 @@
+#jp_container_1.jp-video
+	#jquery_jplayer_1
+.container
+	.row.content#primary-content
+		.row.title
+			.inside
+				= link_to('Music & Videos', releases_path)
+				%p #{@release.name}
+				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
+		.row
+			.col-md-6.release-art
+				#bx-pager
+					- if @release.images.empty?
+						= image_tag('image-not-available.jpg')
+						.item{:style => "background-image: url(image-not-available.jpg)"}
+					- else
+						- @release.images.each do |image|
+							= image_tag(image.file.url(:medium))
+							
+			.col-md-6.release-info
+				.row
+					%h1 Tracklist
+				%a.sc-player(href="https://soundcloud.com/ultramajic/sets/jimmy-edgar-saline-e-p-1")
+
+:javascript
+	$('a.sc-player, div.sc-player').scPlayer();
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function () {
+			$(this).jPlayer("setMedia", {
+				m4v: "/assets/releases.mp4",
+				webmv: "/assets/releases.webm",
+				poster: "/assets/releases.jpg"
+			}).jPlayer("play");
+		},
+		swfPath: "/js",
+		supplied: "webmv, mp4",
+		loop: true,
+		muted: true
+	});

@@ -1,0 +1,140 @@
+/* Soundcloud */
+
+.sc-player {
+	width:100%;
+	float:left;
+	position:relative;
+	margin:5px 0px 0px 0px;
+}
+.sc-player-engine-container {
+	width:0px;
+	height:0px;
+}
+.sc-player .sc-controls {
+	z-index:11;
+	top:0px;
+	left:0px;
+	height:25px;
+	width:30px;
+	float:left;
+}
+.hidden {
+	display: none;
+    visibility: visible;
+}
+.sc-player .sc-controls a {
+	background-image:image-url('play.png');
+	background-repeat:no-repeat;
+	background-position:left center;
+	display:block;
+	width:100%;
+	height:25px;
+	text-indent:-5000px;
+	margin:0;
+}
+.sc-player .sc-controls a.sc-pause {
+	background-image:image-url('pause.png');
+	display:none;
+}
+.sc-player.playing .sc-controls a.sc-play {
+    display: none;
+}
+.sc-player.playing .sc-controls a.sc-pause {
+    display: block;
+}
+.sc-scrubber .sc-time-indicators {
+	position:absolute;
+	right:0px;
+	top:20px;
+	padding:4px;
+	height:12px;
+	background:#aaaaaa;
+	font: 12px helvetica, arial, sans-serif;
+	display:none;
+}
+.sc-artwork-list {
+	display:none;
+}
+.sc-info {
+	display:none;
+}
+.sc-player ol.sc-trackslist {
+	margin-top:5px;
+	padding:0;
+}
+.sc-player ol.sc-trackslist li {
+	color: #fff;
+}
+.sc-player ol.sc-trackslist li:hover {
+	text-decoration:none;
+}
+.sc-player ol.sc-trackslist li.active {
+	text-decoration:none;
+}
+.sc-player ol.sc-trackslist li a {
+	font-size: 1.5em;
+	color:#fff;
+	text-align:left;
+	text-decoration:none;
+	text-transform: uppercase;
+}
+.sc-player ol.sc-trackslist li:hover a {
+	font-size: 1.5em;
+	color:#ffeb00;
+	text-align:left;
+	text-decoration:none;
+}
+.sc-player ol.sc-trackslist li.active a {
+	font-size: 1.5em;
+	color:#ffeb00;
+	text-align:left;
+	text-decoration:none;
+}
+.sc-track-duration {
+	font-size: 1.5em;
+	color:#fff;
+	text-align:left;
+	text-decoration:none;
+	margin-left: 5px;
+}
+.sc-scrubber {
+	background-color:#ccc;
+	width:80%;
+	height:1px;
+	margin-top:11px;
+	overflow:hidden;
+	float:left;
+	cursor:pointer;
+}
+.sc-scrubber .sc-time-span {
+	background-color:#ccc;
+	height:1px;
+	width:100%;
+	position:relative;
+}
+.sc-scrubber .sc-time-span img {
+	height:1px;
+	width:100%;
+	position:relative;
+	z-index:10;
+	visibility:hidden;
+}
+.sc-scrubber .sc-played {
+	background:#ffeb00;
+	height:1px;
+	max-width:100%;
+	position:absolute;
+	top:0px;
+}
+.sc-scrubber .sc-buffer {
+    border-bottom: 1px solid #fff;
+    height: 9px;
+    max-width: 100%;
+    position: absolute;
+    top: -6px;
+}
+.sc-waveform-container {
+	width:100%;
+}
+.sc-info-toggle { display:none; }
+.sc-volume-slider { display:none; }
