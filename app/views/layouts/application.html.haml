@@ -33,17 +33,4 @@
 				%a.toggle-nav
 					= image_tag('toggle-menu.png')
 		= yield
-		
-		:javascript
-			$("#jquery_jplayer_menu").jPlayer({
-				ready: function () {
-					$(this).jPlayer("setMedia", {
-						m4v: "/assets/menu.mp4",
-						webmv: "/assets/menu.webm",
-						poster: "/assets/menu.jpg"
-					});
-				},
-				swfPath: "/js",
-				supplied: "webmv, mp4",
-				loop: true
-			});
+	

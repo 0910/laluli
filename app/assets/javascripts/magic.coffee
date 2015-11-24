@@ -19,6 +19,21 @@ ready = ->
       $('.about').addClass 'show'
       $('.navigation').removeClass 'show'
     return
+  menuAnimation = ->
+    videomp4 = "<%= asset_path('menu.mp4') %>"
+    videowebm = "<%= asset_path('menu.webm') %>"
+    videojpg = "<%= asset_path('menu.jpg') %>"
+    $('#jquery_jplayer_menu').jPlayer
+      ready: ->
+        $(this).jPlayer('setMedia',
+          m4v: videomp4
+          webmv: videowebm
+          poster: videojpg).jPlayer 'play'
+        return
+      swfPath: '/js'
+      supplied: 'webmv, mp4'
+      loop: true
+      muted: true
   $ ->
     $(document).on 'page:change', ->
       $('#primary-content').addClass 'animated'
