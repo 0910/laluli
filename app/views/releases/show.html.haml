@@ -21,19 +21,3 @@
 				.row
 					%h1 Tracklist
 				%a.sc-player(href="https://soundcloud.com/ultramajic/sets/jimmy-edgar-saline-e-p-1")
-
-:javascript
-	$('a.sc-player, div.sc-player').scPlayer();
-	$("#jquery_jplayer_1").jPlayer({
-		ready: function () {
-			$(this).jPlayer("setMedia", {
-				m4v: "/assets/releases.mp4",
-				webmv: "/assets/releases.webm",
-				poster: "/assets/releases.jpg"
-			}).jPlayer("play");
-		},
-		swfPath: "/js",
-		supplied: "webmv, mp4",
-		loop: true,
-		muted: true
-	});

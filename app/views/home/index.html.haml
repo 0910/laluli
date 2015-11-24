@@ -1,19 +1,2 @@
 #jp_container_1.jp-video
 	#jquery_jplayer_1
-
-:javascript
-	$("#jquery_jplayer_1").jPlayer({
-		ready: function () {
-			$(this).jPlayer("setMedia", {
-				m4v: "assets/intro.mp4",
-				webmv: "assets/intro.webm",
-				poster: "assets/intro.jpg"
-			}).jPlayer("play");
-		},
-		swfPath: "/js",
-		supplied: "webmv, mp4"
-	});
-	$("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event){
-		$('.toggle-nav').click();
-		$('#jquery_jplayer_menu').jPlayer('play');
-	});

@@ -1,0 +1,18 @@
+collections = ->
+	videomp4 = "<%= asset_path('collections.mp4') %>"
+	videowebm = "<%= asset_path('collections.webm') %>"
+	videojpg = "<%= asset_path('collections.jpg') %>"
+	$('#jquery_jplayer_1').jPlayer
+		ready: ->
+			$(this).jPlayer('setMedia',
+				m4v: videomp4
+				webmv: videowebm
+				poster: videojpg).jPlayer 'play'
+			return
+		swfPath: '/js'
+		supplied: 'webmv, mp4'
+		loop: true
+		muted: true
+
+$('.collections').ready(collections);
+$('.collections').on('page:load', collections);

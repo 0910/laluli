@@ -24,18 +24,3 @@
 										.over
 											%p
 												#{release.name}
-
-:javascript
-	$("#jquery_jplayer_1").jPlayer({
-		ready: function () {
-			$(this).jPlayer("setMedia", {
-				m4v: "assets/releases.mp4",
-				webmv: "assets/releases.webm",
-				poster: "assets/releases.jpg"
-			}).jPlayer("play");
-		},
-		swfPath: "/js",
-		supplied: "webmv, mp4",
-		loop: true,
-		muted: true
-	});

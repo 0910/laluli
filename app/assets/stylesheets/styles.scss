@@ -336,7 +336,10 @@ body.index, body.lookbooks, body.performances, body.personal{
 		background-position: center;
 		background-repeat: no-repeat;
 		.over{
-			background: rgba(203,119,124, 0.8);
+			background-image: image-url('over.gif');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -382,7 +385,10 @@ body.show{
 		background-position: center;
 		background-repeat: no-repeat;
 		.over{
-			background: rgba(203,119,124, 0.8);
+			background-image: image-url('over.gif');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
 			position: absolute;
 			top: 0;
 			left: 0;

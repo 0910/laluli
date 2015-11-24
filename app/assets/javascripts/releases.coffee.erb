@@ -1,0 +1,18 @@
+releases = ->
+	videomp4 = "<%= asset_path('releases.mp4') %>"
+	videowebm = "<%= asset_path('releases.webm') %>"
+	videojpg = "<%= asset_path('releases.jpg') %>"
+	$('#jquery_jplayer_1').jPlayer
+		ready: ->
+			$(this).jPlayer('setMedia',
+				m4v: videomp4
+				webmv: videowebm
+				poster: videojpg).jPlayer 'play'
+			return
+		swfPath: '/js'
+		supplied: 'webmv, mp4'
+		loop: true
+		muted: true
+
+$('.releases').ready(releases);
+$('.releases').on('page:load', releases);
