@@ -21,5 +21,4 @@
 //= require jquery.jplayer
 //= require soundcloud.player.api
 //= require sc-player
-//= require jquery.readyselector
 //= require_tree .

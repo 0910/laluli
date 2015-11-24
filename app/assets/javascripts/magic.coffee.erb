@@ -1,0 +1,178 @@
+ready = ->
+
+  toggleNav = ->
+    if $('.navigation').hasClass('show')
+      # Do things on Nav Close
+      $('.navgation').removeClass 'show'
+      $('#jquery_jplayer_menu').jPlayer('stop');
+    else
+      # Do things on Nav Open
+      $('.navigation').addClass 'show'
+      $('#jquery_jplayer_menu').jPlayer('play');
+    return
+
+  toggleAbout = ->
+    if $('.about').hasClass('show')
+      # Do things on Nav Close
+      $('.about').removeClass 'show'
+      $('.navigation').removeClass 'show'
+    else
+      # Do things on Nav Open
+      $('.about').addClass 'show'
+      $('.navigation').removeClass 'show'
+    return
+
+  switchVideo = (section) ->
+    switch section
+      when "home"
+        videomp4 = "<%= asset_path('intro.mp4') %>"
+        videowebm = "<%= asset_path('intro.webm') %>"
+        videojpg = "<%= asset_path('intro.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              m4v: videomp4
+              webmv: videowebm
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4'
+          loop: true
+          muted: true
+
+        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
+          $('.toggle-nav').click()
+          $('#jquery_jplayer_menu').jPlayer 'play'
+          return
+
+      when "collections"
+        videomp4 = "<%= asset_path('collections.mp4') %>"
+        videowebm = "<%= asset_path('collections.webm') %>"
+        videojpg = "<%= asset_path('collections.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              m4v: videomp4
+              webmv: videowebm
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4'
+          loop: true
+          muted: true
+
+        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
+          $('.toggle-nav').click()
+          $('#jquery_jplayer_menu').jPlayer 'play'
+          return
+
+      when "stylings"
+        videomp4 = "<%= asset_path('stylings.mp4') %>"
+        videowebm = "<%= asset_path('stylings.webm') %>"
+        videojpg = "<%= asset_path('stylings.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              m4v: videomp4
+              webmv: videowebm
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4'
+          loop: true
+          muted: true
+
+        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
+          $('.toggle-nav').click()
+          $('#jquery_jplayer_menu').jPlayer 'play'
+          return
+
+      when "interiors"
+        videomp4 = "<%= asset_path('interiors.mp4') %>"
+        videowebm = "<%= asset_path('interiors.webm') %>"
+        videojpg = "<%= asset_path('interiors.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              m4v: videomp4
+              webmv: videowebm
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4'
+          loop: true
+          muted: true
+
+        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
+          $('.toggle-nav').click()
+          $('#jquery_jplayer_menu').jPlayer 'play'
+          return
+
+      when "releases"
+        videomp4 = "<%= asset_path('releases.mp4') %>"
+        videowebm = "<%= asset_path('releases.webm') %>"
+        videojpg = "<%= asset_path('releases.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              m4v: videomp4
+              webmv: videowebm
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4'
+          loop: true
+          muted: true
+
+        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
+          $('.toggle-nav').click()
+          $('#jquery_jplayer_menu').jPlayer 'play'
+          return
+    return    
+
+  menuAnimation = ->
+    menuvideomp4 = "<%= asset_path('menu.mp4') %>"
+    menuvideowebm = "<%= asset_path('menu.webm') %>"
+    menuvideojpg = "<%= asset_path('menu.jpg') %>"
+    $('#jquery_jplayer_menu').jPlayer
+      ready: ->
+        $(this).jPlayer('setMedia',
+          m4v: menuvideomp4
+          webmv: menuvideowebm
+          poster: menuvideojpg).jPlayer 'play'
+        return
+      swfPath: '/js'
+      supplied: 'webmv, mp4'
+      loop: true
+      muted: true
+
+  $ ->
+    section = $('body').attr('id')
+    switchVideo(section)
+    menuAnimation()
+
+    $(document).on 'page:change', ->
+      $('#primary-content').addClass 'animated'
+      $('#primary-content').addClass 'fadeInUp'
+
+      return
+    $(document).on 'page:fetch', ->
+      $('#primary-content').addClass 'animated'
+      $('#primary-content').addClass 'fadeOutUp'
+      return
+
+    # Toggle Nav on Click
+    $('.toggle-nav').click (event) ->
+      # Calling a function in case you want to expand upon this.
+      event.preventDefault()
+      toggleNav()
+      return
+    return
+    $('.toggle-about').click (event) ->
+      # Calling a function in case you want to expand upon this.
+      event.preventDefault()
+      toggleAbout()
+      return
+    return
+$(document).ready(ready);
+$(document).on('page:load', ready);
