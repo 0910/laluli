@@ -11,17 +11,6 @@ ready = ->
       $('#jquery_jplayer_menu').jPlayer('play');
     return
 
-  toggleAbout = ->
-    if $('.about').hasClass('show')
-      # Do things on Nav Close
-      $('.about').removeClass 'show'
-      $('.navigation').removeClass 'show'
-    else
-      # Do things on Nav Open
-      $('.about').addClass 'show'
-      $('.navigation').removeClass 'show'
-    return
-
   switchVideo = (section) ->
     switch section
       when "home"
@@ -61,11 +50,6 @@ ready = ->
           loop: true
           muted: true
 
-        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
-          $('.toggle-nav').click()
-          $('#jquery_jplayer_menu').jPlayer 'play'
-          return
-
       when "stylings"
         videomp4 = "<%= asset_path('stylings.mp4') %>"
         videowebm = "<%= asset_path('stylings.webm') %>"
@@ -82,10 +66,6 @@ ready = ->
           loop: true
           muted: true
 
-        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
-          $('.toggle-nav').click()
-          $('#jquery_jplayer_menu').jPlayer 'play'
-          return
 
       when "interiors"
         videomp4 = "<%= asset_path('interiors.mp4') %>"
@@ -103,11 +83,6 @@ ready = ->
           loop: true
           muted: true
 
-        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
-          $('.toggle-nav').click()
-          $('#jquery_jplayer_menu').jPlayer 'play'
-          return
-
       when "releases"
         videomp4 = "<%= asset_path('releases.mp4') %>"
         videowebm = "<%= asset_path('releases.webm') %>"
@@ -123,11 +98,7 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-
-        $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
-          $('.toggle-nav').click()
-          $('#jquery_jplayer_menu').jPlayer 'play'
-          return
+          
     return    
 
   menuAnimation = ->
@@ -166,12 +137,6 @@ ready = ->
       # Calling a function in case you want to expand upon this.
       event.preventDefault()
       toggleNav()
-      return
-    return
-    $('.toggle-about').click (event) ->
-      # Calling a function in case you want to expand upon this.
-      event.preventDefault()
-      toggleAbout()
       return
     return
 $(document).ready(ready);
