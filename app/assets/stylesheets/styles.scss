@@ -40,7 +40,7 @@ body.collections{
 	background-image: image-url('collections.jpg');
 }
 body.interiors{
-	background-image: image-url('bg_interiors_2.jpg');
+	background-image: image-url('interiors.jpg');
 }
 body.releases{
 	background-image: image-url('releases.jpg');
@@ -290,9 +290,9 @@ ul{
 	.inside{
 		line-height: 135px;
 		vertical-align: middle;
-		margin: 0 0 0 15px;
+		margin: 0;
 		a,p{
-			font-size: 2em;
+			font-size: 3em;
 			margin: 0 0 0 .5em;
 			display: inline-block;
 			color: #fff;
