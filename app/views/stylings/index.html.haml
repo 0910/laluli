@@ -5,37 +5,23 @@
 		.row.title
 			.inside
 				= link_to('Styling', stylings_path)
-				- if @lookbook
-					= link_to('Lookbook', lookbooks_stylings_path, class: 'sub active')
-				- else
-					= link_to('Lookbook', lookbooks_stylings_path, class: 'sub')
-
-				- if @performances
-					= link_to('Performances', performances_stylings_path, class: 'sub active')
-				- else
-					= link_to('Performances', performances_stylings_path, class: 'sub')
-
-				- if @personal
-					= link_to('Personal', personal_stylings_path, class: 'sub active')
-				- else
-					= link_to('Personal', personal_stylings_path, class: 'sub')
+				
 				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
-		.row
-			- @stylings.each do |styling|
-				.col-md-4
-					- if styling.images.empty?
-						= link_to(styling_path(styling)) do
-							.item{:style => "background-image: url(image-not-available.jpg)"}
-								.over
-									%p
-										#{styling.name}
 
-					- else
-						- styling.images.each do |image|
-							- if image.cover == true
-								= link_to(styling_path(styling)) do
-									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
-										.over
-											%p
-												#{styling.name}
+		.row
+			.col-sm-4.col-md-4
+				= link_to(lookbooks_stylings_path) do
+					.item{:style => "background-image: image-url('lookbook.jpg')"}
+						.over
+							%p Lookbook
+			.col-sm-4.col-md-4
+				= link_to(performances_stylings_path) do
+					.item{:style => "background-image: image-url('performances.jpg')"}
+						.over
+							%p Performances
+			.col-sm-4.col-md-4
+				= link_to(personal_stylings_path) do
+					.item{:style => "background-image: image-url('personal.jpg')"}
+						.over
+							%p Personal
 

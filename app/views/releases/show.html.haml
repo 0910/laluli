@@ -20,4 +20,19 @@
 			.col-md-6.release-info
 				.row
 					%h1 Tracklist
-				%a.sc-player(href="https://soundcloud.com/ultramajic/sets/jimmy-edgar-saline-e-p-1")
+				.row
+					%a.sc-player(href="https://soundcloud.com/ultramajic/sets/jimmy-edgar-saline-e-p-1")
+
+:javascript
+	$(function() {
+		$('a.sc-player, div.sc-player').scPlayer();
+		$('#bx-pager').bxSlider({
+			mode: 'fade',
+			auto: true,
+			pause: 5000,
+			useCSS:true,
+			easing: 'cubic-bezier(.74,.14,.44,.71)',
+				nextText: '→',
+				prevText: '←'
+		});
+	});

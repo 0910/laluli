@@ -20,7 +20,8 @@
 						- release.images.each do |image|
 							- if image.cover == true
 								= link_to(release_path(release)) do
-									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+									.item
+										= image_tag(image.file.url(:medium))
 										.over
 											%p
 												#{release.name}

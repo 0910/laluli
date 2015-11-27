@@ -28,7 +28,6 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-          preload: 'auto'
 
         $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
           $('.toggle-nav').click()
@@ -50,7 +49,6 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-          preload: 'auto'
 
       when "stylings"
         videomp4 = "<%= asset_path('stylings.mp4') %>"
@@ -67,7 +65,6 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-          preload: 'auto'
 
       when "interiors"
         videomp4 = "<%= asset_path('interior.mp4') %>"
@@ -84,7 +81,6 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-          preload: 'auto'
 
       when "releases"
         videomp4 = "<%= asset_path('releases.mp4') %>"
@@ -101,7 +97,6 @@ ready = ->
           supplied: 'webmv, mp4'
           loop: true
           muted: true
-          preload: 'auto'
           
     return    
 

@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.releases.show{
-	.release-art{
+.releases{
+	.item{
 		img{
-			width: 90%;
+			width: 100%;
 			height: auto;
 		}
+	}
+}
+.releases.show{
+	.release-art{
+		width: 45%;
+		padding-right: 5%;
 	}
 	.release-info{
 		h1{
@@ -16,5 +22,29 @@
 			font-weight: 100;
 			margin-top: 0;
 		}
+	}
+	.bx-wrapper .bx-controls-direction a {
+		color: #fff;
+		display: block;
+		font-size: 24px;
+		height: 24px;
+		line-height: 24px;
+		margin: 0 5px;
+		outline: 0 none;
+		text-decoration: none;
+		text-indent: 1px;
+	}
+	.bx-wrapper .bx-controls-direction a:hover{
+		text-decoration: none;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+		background: #000 none repeat scroll 0 0;
+	}		.bx-wrapper .bx-prev {
+		background: none;
+		left: -50px;
+	}
+	.bx-wrapper .bx-next {
+		background: none;
+		right: -50px;
 	}
 }
