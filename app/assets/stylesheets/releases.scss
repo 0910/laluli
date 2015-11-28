@@ -4,6 +4,7 @@
 
 .releases{
 	.item{
+		height: auto;
 		img{
 			width: 100%;
 			height: auto;
@@ -11,11 +12,9 @@
 	}
 }
 .releases.show{
-	.release-art{
-		width: 45%;
-		padding-right: 5%;
-	}
 	.release-info{
+		margin: 60px 0;
+		padding-left:30px;
 		h1{
 			color: #fff;
 			font-size: 2.5em;
@@ -26,25 +25,42 @@
 	.bx-wrapper .bx-controls-direction a {
 		color: #fff;
 		display: block;
-		font-size: 24px;
-		height: 24px;
-		line-height: 24px;
-		margin: 0 5px;
+		font-size: 18px;
+		height: 36px;
+		line-height: 32px;
+		margin: -18px 5px 0 5px;
 		outline: 0 none;
+		padding: 0;
+		text-align: center;
 		text-decoration: none;
 		text-indent: 1px;
+		vertical-align: middle;
+		width: 36px;
+		background-color: #000;
+		border-radius: 50%;
 	}
 	.bx-wrapper .bx-controls-direction a:hover{
 		text-decoration: none;
 	}
+	.bx-wrapper .bx-pager.bx-default-pager a{
+		background-color: #fff;
+	}
 	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
-		background: #000 none repeat scroll 0 0;
+		background: #ffeb00 none repeat scroll 0 0;
 	}		.bx-wrapper .bx-prev {
 		background: none;
-		left: -50px;
+		left: 5px;
 	}
 	.bx-wrapper .bx-next {
 		background: none;
-		right: -50px;
+		right: 5px;
+
+	}
+}
+@media (min-width: 1200px){
+	.releases.show{
+		.release-info{
+			margin: 0;
+		}
 	}
 }

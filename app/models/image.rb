@@ -5,4 +5,5 @@ class Image < ActiveRecord::Base
   belongs_to :styling
   belongs_to :interior
   belongs_to :collection
+  belongs_to :video
 end

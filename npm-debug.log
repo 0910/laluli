@@ -1,0 +1,149 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'localtunnel' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'localtunnel', null ]
+7 verbose cache add spec localtunnel
+8 silly cache add parsed spec { raw: 'localtunnel',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'localtunnel',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed localtunnel@*
+10 verbose addNamed "*" is a valid semver range for localtunnel
+11 silly addNameRange { name: 'localtunnel', range: '*', hasData: false }
+12 silly mapToRegistry name localtunnel
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/localtunnel
+16 verbose addNameRange registry:https://registry.npmjs.org/localtunnel not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/localtunnel
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 4:18:21 PM
+20 verbose request id 41e597f9c855147b
+21 verbose etag "2UCVFLBUR1359P9ZQLYCUWKE0"
+22 http request GET https://registry.npmjs.org/localtunnel
+23 http 200 https://registry.npmjs.org/localtunnel
+24 silly get cb [ 200,
+24 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"CD5TR9SRLU7Q28D2PAIGFQ0B4"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     'content-length': '26558',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     date: 'Sat, 28 Nov 2015 19:18:22 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '0',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-jfk1029-JFK',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '1',
+24 silly get     'x-timer': 'S1448738302.764639,VS0,VE19',
+24 silly get     vary: 'Accept' } ]
+25 verbose get saving localtunnel to /Users/emadobao/.npm/registry.npmjs.org/localtunnel/.cache.json
+26 silly addNameRange number 2 { name: 'localtunnel', range: '*', hasData: true }
+27 silly addNameRange versions [ 'localtunnel',
+27 silly addNameRange   [ '0.0.0',
+27 silly addNameRange     '0.0.1',
+27 silly addNameRange     '0.0.2',
+27 silly addNameRange     '0.0.3',
+27 silly addNameRange     '0.0.4',
+27 silly addNameRange     '0.1.0',
+27 silly addNameRange     '0.1.1',
+27 silly addNameRange     '0.1.2',
+27 silly addNameRange     '0.1.3',
+27 silly addNameRange     '0.2.0',
+27 silly addNameRange     '0.2.1',
+27 silly addNameRange     '0.2.2',
+27 silly addNameRange     '1.0.0',
+27 silly addNameRange     '1.1.0',
+27 silly addNameRange     '1.1.1',
+27 silly addNameRange     '1.1.2',
+27 silly addNameRange     '1.2.0',
+27 silly addNameRange     '1.3.0',
+27 silly addNameRange     '1.4.0',
+27 silly addNameRange     '1.5.0',
+27 silly addNameRange     '1.5.1',
+27 silly addNameRange     '1.6.0',
+27 silly addNameRange     '1.7.0',
+27 silly addNameRange     '1.8.0' ] ]
+28 silly addNamed localtunnel@1.8.0
+29 verbose addNamed "1.8.0" is a plain semver version for localtunnel
+30 silly mapToRegistry name localtunnel
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/localtunnel
+34 verbose addRemoteTarball https://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz',
+35 verbose addRemoteTarball   'e8feba5fa015bfa2cc1c5daff0973eaf3adf3337' ]
+36 info retry fetch attempt 1 at 4:18:23 PM
+37 info attempt registry request try #1 at 4:18:23 PM
+38 http fetch GET https://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz
+39 http fetch 200 https://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz
+40 silly fetchAndShaCheck shasum e8feba5fa015bfa2cc1c5daff0973eaf3adf3337
+41 verbose addTmpTarball /var/folders/7_/jb61kxdj49l8d4f2cw3m_1xm0000gn/T/npm-16168-81415282/registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz not in flight; adding
+42 verbose addTmpTarball already have metadata; skipping unpack for localtunnel@1.8.0
+43 silly cache afterAdd localtunnel@1.8.0
+44 verbose afterAdd /Users/emadobao/.npm/localtunnel/1.8.0/package/package.json not in flight; writing
+45 verbose afterAdd /Users/emadobao/.npm/localtunnel/1.8.0/package/package.json written
+46 silly install resolved [ { author: { name: 'Roman Shtylman', email: 'shtylman@gmail.com' },
+46 silly install resolved     name: 'localtunnel',
+46 silly install resolved     description: 'expose localhost to the world',
+46 silly install resolved     version: '1.8.0',
+46 silly install resolved     license: 'MIT',
+46 silly install resolved     repository:
+46 silly install resolved      { type: 'git',
+46 silly install resolved        url: 'git://github.com/shtylman/localtunnel.git' },
+46 silly install resolved     dependencies:
+46 silly install resolved      { request: '2.65.0',
+46 silly install resolved        yargs: '3.29.0',
+46 silly install resolved        debug: '2.2.0',
+46 silly install resolved        openurl: '1.1.0' },
+46 silly install resolved     devDependencies: { mocha: '~1.17.0' },
+46 silly install resolved     scripts: { test: 'mocha --ui qunit --reporter list --timeout 10000 -- test/index.js' },
+46 silly install resolved     bin: { lt: './bin/client' },
+46 silly install resolved     main: './client.js',
+46 silly install resolved     gitHead: '86cd2d3c58f078e6a82da672304bf75cbb86835c',
+46 silly install resolved     bugs: { url: 'https://github.com/shtylman/localtunnel/issues' },
+46 silly install resolved     homepage: 'https://github.com/shtylman/localtunnel#readme',
+46 silly install resolved     _id: 'localtunnel@1.8.0',
+46 silly install resolved     _shasum: 'e8feba5fa015bfa2cc1c5daff0973eaf3adf3337',
+46 silly install resolved     _from: 'localtunnel@*',
+46 silly install resolved     _npmVersion: '2.14.3',
+46 silly install resolved     _nodeVersion: '4.1.0',
+46 silly install resolved     _npmUser: { name: 'defunctzombie', email: 'shtylman@gmail.com' },
+46 silly install resolved     dist:
+46 silly install resolved      { shasum: 'e8feba5fa015bfa2cc1c5daff0973eaf3adf3337',
+46 silly install resolved        tarball: 'http://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz' },
+46 silly install resolved     maintainers: [ [Object] ],
+46 silly install resolved     directories: {},
+46 silly install resolved     _resolved: 'https://registry.npmjs.org/localtunnel/-/localtunnel-1.8.0.tgz' } ]
+47 info install localtunnel@1.8.0 into /usr/local/lib
+48 info installOne localtunnel@1.8.0
+49 verbose installOne of localtunnel to /usr/local/lib not in flight; installing
+50 warn locking Error: EACCES, open '/Users/emadobao/.npm/_locks/localtunnel-7dc996a9645fd287.lock'
+50 warn locking     at Error (native)
+50 warn locking  /Users/emadobao/.npm/_locks/localtunnel-7dc996a9645fd287.lock failed { [Error: EACCES, open '/Users/emadobao/.npm/_locks/localtunnel-7dc996a9645fd287.lock']
+50 warn locking   errno: -13,
+50 warn locking   code: 'EACCES',
+50 warn locking   path: '/Users/emadobao/.npm/_locks/localtunnel-7dc996a9645fd287.lock' }
+51 verbose stack Error: Attempt to unlock /usr/local/lib/node_modules/localtunnel, which hasn't been locked
+51 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+51 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1017:5)
+51 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1021:20
+51 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+51 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+51 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+51 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+52 verbose cwd /Users/emadobao/Sites/rails/laluli
+53 error Darwin 14.3.0
+54 error argv "node" "/usr/local/bin/npm" "install" "-g" "localtunnel"
+55 error node v0.12.4
+56 error npm  v2.10.1
+57 error Attempt to unlock /usr/local/lib/node_modules/localtunnel, which hasn't been locked
+58 error If you need help, you may report this error at:
+58 error     <https://github.com/npm/npm/issues>
+59 verbose exit [ 1, true ]

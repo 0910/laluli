@@ -1,0 +1,29 @@
+#jp_container_1.jp-video
+	#jquery_jplayer_1
+.container
+	.row.content#primary-content
+		.row.title
+			.inside
+				= link_to('Styling', stylings_path)
+				%p Lookbooks
+				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
+
+		.row
+			- @stylings.each do |lookbook|
+				.col-sm-4.col-md-4
+					- if lookbook.images.empty?
+						= link_to(styling_path(lookbook)) do
+							.item{:style => "background-image: url(image-not-available.jpg)"}
+								.over
+									%p
+										#{lookbook.name}
+
+					- else
+						- lookbook.images.each do |image|
+							- if image.cover == true
+								= link_to(styling_path(lookbook)) do
+									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+										.over
+											%p
+												#{lookbook.name}
+

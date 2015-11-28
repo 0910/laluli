@@ -38,6 +38,7 @@ gem 'country_select'
 gem 'lightbox-bootstrap-rails'
 gem "animate-rails"
 gem 'jplayer-rails'
+gem 'localtunnel'
 
 
 

@@ -1,6 +1,7 @@
 class ReleasesController < ApplicationController
   def index
-  	@releases = Release.all.reverse_order
+  	@releases = Release.order('year asc')
+  	@videos = Video.all
   end
 
   def show

@@ -11,17 +11,17 @@
 		.row
 			.col-sm-4.col-md-4
 				= link_to(lookbooks_stylings_path) do
-					.item{:style => "background-image: image-url('lookbook.jpg')"}
+					.item{:style => "background-image: url('assets/lookbook.jpg')"}
 						.over
 							%p Lookbook
 			.col-sm-4.col-md-4
-				= link_to(performances_stylings_path) do
-					.item{:style => "background-image: image-url('performances.jpg')"}
+				= link_to(styling_path(1)) do
+					.item{:style => "background-image: url('assets/performances.jpg')"}
 						.over
 							%p Performances
 			.col-sm-4.col-md-4
-				= link_to(personal_stylings_path) do
-					.item{:style => "background-image: image-url('personal.jpg')"}
+				= link_to(styling_path(2)) do
+					.item{:style => "background-image: url('assets/personal.jpg')"}
 						.over
 							%p Personal
 

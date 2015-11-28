@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119233719) do
+ActiveRecord::Schema.define(version: 20151128181509) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -56,12 +56,14 @@ ActiveRecord::Schema.define(version: 20151119233719) do
     t.datetime "updated_at",                                    null: false
     t.boolean  "cover",             limit: 1,   default: false
     t.integer  "position",          limit: 4
+    t.integer  "video_id",          limit: 4
   end
 
   add_index "images", ["collection_id"], name: "index_images_on_collection_id", using: :btree
   add_index "images", ["interior_id"], name: "index_images_on_interior_id", using: :btree
   add_index "images", ["release_id"], name: "index_images_on_release_id", using: :btree
   add_index "images", ["styling_id"], name: "index_images_on_styling_id", using: :btree
+  add_index "images", ["video_id"], name: "index_images_on_video_id", using: :btree
 
   create_table "interiors", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -123,10 +125,18 @@ ActiveRecord::Schema.define(version: 20151119233719) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "videos", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "link",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   add_foreign_key "images", "collections"
   add_foreign_key "images", "interiors"
   add_foreign_key "images", "releases"
   add_foreign_key "images", "stylings"
+  add_foreign_key "images", "videos"
   add_foreign_key "stylings", "categories"
   add_foreign_key "tracks", "releases"
 end
