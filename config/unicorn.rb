@@ -13,9 +13,6 @@ timeout 30
 # Set up socket location
 listen "/tmp/unicorn.laluli.sock"
 
-# Set unicorn config
-unicorn_config "#{shared_path}/config/unicorn.rb"
-
 # Logging
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
 stdout_path "#{shared_path}/log/unicorn.stdout.log"
