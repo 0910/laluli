@@ -1,7 +1,7 @@
 # set path to application
 app_root = "/home/ubuntu/applications/laluli"
 current_path = "/home/ubuntu/applications/laluli/current"
-shared_dir = "/home/ubuntu/applications/laluli/shared"
+shared_path = "/home/ubuntu/applications/laluli/shared"
 working_directory current_path
 
 
@@ -17,8 +17,8 @@ listen "/tmp/unicorn.laluli.sock"
 unicorn_config "#{shared_path}/config/unicorn.rb"
 
 # Logging
-stderr_path "#{shared_dir}/log/unicorn.stderr.log"
-stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+stderr_path "#{shared_path}/log/unicorn.stderr.log"
+stdout_path "#{shared_path}/log/unicorn.stdout.log"
 
 # Set master PID location
 pid "#{current_path}/tmp/pids/unicorn.pid"
