@@ -1,28 +1,60 @@
-require "bundler/capistrano"
+server '74.208.90.50', roles: [:web, :app, :db], primary: true
+set :domain, "laluli.nuevediez.com"
+set :repo_url,        'git@github.com:0910/laluli.git'
+set :application,     'laluli'
+set :user,            'root'
+set :rbenv_ruby, '2.2.2'
 
-load "config/recipes/base"
-load "config/recipes/nginx"
-load "config/recipes/unicorn"
-load "config/recipes/mysql"
-load "config/recipes/rbenv"
-load "config/recipes/check"
-load "config/recipes/nodejs"
+set :pty,             true
+set :use_sudo,        false
+set :stage,           :production
+set :rails_env,       :production
+set :deploy_via,      :remote_cache
+set :deploy_to,       "/var/www/applications/#{fetch(:application)}"
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :assets_roles, [:web, :app]            # Defaults to [:web]
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
-server '100.115.96.79', roles: [:web, :app, :db], primary: true
+set :scm, :git
+set :branch, :master
+set :format, :pretty
+set :log_level, :debug
+set :keep_releases, 5
 
-set :domain, 'laluli.cloudapp.net'
-set :user, "root"
-set :application, "laluli"
-set :deploy_to, "/var/www/applications/#{application}"
-set :deploy_via, :remote_cache
-set :use_sudo, false
 
-set :scm, "git"
-set :repository, "git@github.com:0910/laluli.git"
-set :branch, "master"
-set :keep_releases, 2
+namespace :deploy do
+  desc "Make sure local git is in sync with remote."
+  task :check_revision do
+    on roles(:app) do
+      unless `git rev-parse HEAD` == `git rev-parse origin/master`
+        puts "WARNING: HEAD is not the same as origin/master"
+        puts "Run `git push` to sync changes."
+        exit
+      end
+    end
+  end
 
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+  desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart'
+      invoke 'deploy'
+    end
+  end
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo 'service unicorn_laluli restart'
+      sudo 'service nginx restart'
+    end
+  end
+
+
+  before :starting,     :check_revision
+  after  :finishing,    :compile_assets
+  after  :finishing,    :cleanup
+  after  :finishing,    :restart
+end
