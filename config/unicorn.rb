@@ -1,4 +1,5 @@
 # set path to application
+app_root = "/var/www/applications/laluli"
 current_path = "/var/www/applications/laluli/current"
 shared_dir = "/var/www/applications/laluli/shared"
 working_directory current_path
@@ -21,7 +22,6 @@ stdout_path "#{shared_dir}/log/unicorn.stdout.log"
 
 # Set master PID location
 pid "#{current_path}/tmp/pids/unicorn.pid"
-
 
 before_exec do |server| 
   ENV["BUNDLE_GEMFILE"] = "#{current_path}/Gemfile" 
