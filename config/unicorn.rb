@@ -1,7 +1,7 @@
 # set path to application
-app_root = "/var/www/applications/laluli"
-current_path = "/var/www/applications/laluli/current"
-shared_dir = "/var/www/applications/laluli/shared"
+app_root = "/home/ubuntu/applications/laluli"
+current_path = "/home/ubuntu/applications/laluli/current"
+shared_dir = "/home/ubuntu/applications/laluli/shared"
 working_directory current_path
 
 
