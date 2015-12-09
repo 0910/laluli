@@ -2,7 +2,7 @@ server '40.76.56.133', roles: [:web, :app, :db], primary: true
 set :domain, "laluli.nuevediez.com"
 set :repo_url,        'git@github.com:0910/laluli.git'
 set :application,     'laluli'
-set :user,            'root'
+set :user,            'ubuntu'
 set :rbenv_ruby, '2.2.2'
 
 set :pty,             true
