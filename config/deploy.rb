@@ -3,7 +3,7 @@ set :domain, "laluli.nuevediez.com"
 set :repo_url,        'git@github.com:0910/laluli.git'
 set :application,     'laluli'
 set :user,            'ubuntu'
-set :rbenv_ruby, '2.2.2'
+set :rbenv_ruby, '2.2.3'
 
 set :pty,             true
 set :use_sudo,        false

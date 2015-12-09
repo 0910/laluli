@@ -19,6 +19,6 @@ production:
   database: laluli_production
   pool: 5
   username: root
-  password: 
+  password: <%= ENV["PRODUCTION_DB_PASS"] %>
   socket: /var/run/mysqld/mysqld.sock
   port: 3306
