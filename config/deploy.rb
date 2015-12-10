@@ -26,13 +26,6 @@ set :keep_releases, 5
 
 namespace :deploy do
 
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
-    end
-  end
-
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
@@ -40,7 +33,6 @@ namespace :deploy do
     put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
-  after "deploy:setup", "deploy:setup_config"
 
   desc "Make sure local git is in sync with remote."
   task :check_revision do
@@ -74,4 +66,5 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
+  after :setup, :setup_config
 end
