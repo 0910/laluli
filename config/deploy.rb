@@ -23,7 +23,6 @@ set :format, :pretty
 set :log_level, :debug
 set :keep_releases, 5
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
 
@@ -43,11 +42,6 @@ namespace :deploy do
   end
   after "deploy:setup", "deploy:setup_config"
 
-  task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-  after "deploy:finalize_update", "deploy:symlink_config"
-
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
@@ -58,6 +52,26 @@ namespace :deploy do
       end
     end
   end
-  before "deploy", "deploy:check_revision"
 
+  desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart'
+      invoke 'deploy'
+    end
+  end
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo 'service unicorn_laluli restart'
+      sudo 'service nginx restart'
+    end
+  end
+
+
+  before :starting,     :check_revision
+  after  :finishing,    :compile_assets
+  after  :finishing,    :cleanup
+  after  :finishing,    :restart
 end
