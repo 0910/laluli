@@ -2,7 +2,7 @@ server '40.76.56.133', roles: [:web, :app, :db], primary: true
 
 set :application,     'laluli'
 set :user,            'ubuntu'
-set :deploy_to,       "/home/#{user}/applications/#{application}"
+set :deploy_to,       "/home/ubuntu/applications/#{fetch(:application)}"
 set :deploy_via,      :remote_cache
 set :use_sudo,        false
 
