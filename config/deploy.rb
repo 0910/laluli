@@ -1,31 +1,27 @@
 server '40.76.56.133', roles: [:web, :app, :db], primary: true
-
+set :domain, "laluli.nuevediez.com"
+set :repo_url,        'git@github.com:0910/laluli.git'
 set :application,     'laluli'
 set :user,            'ubuntu'
-set :deploy_to,       "/home/ubuntu/applications/#{fetch(:application)}"
-set :deploy_via,      :remote_cache
-set :use_sudo,        false
-
-set :scm, :git
-set :repo_url,        'git@github.com:0910/laluli.git'
-set :branch, :master
-set :format, :pretty
-set :log_level, :debug
-set :keep_releases, 5
-
 set :rbenv_ruby, '2.2.3'
 
+set :pty,             true
+set :use_sudo,        false
 set :stage,           :production
 set :rails_env,       :production
-
-
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+set :deploy_via,      :remote_cache
+set :deploy_to,       "/home/ubuntu/applications/#{fetch(:application)}"
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :assets_roles, [:web, :app]            # Defaults to [:web]
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'shared/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
+set :scm, :git
+set :branch, :master
+set :format, :pretty
+set :log_level, :debug
+set :keep_releases, 5
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
