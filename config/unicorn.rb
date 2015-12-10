@@ -16,4 +16,4 @@ preload_app true
 timeout 30
 
 # Set master PID location
-pid "#{root}/tmp/pids/unicorn.pid"
+pid "#{app_root}/shared/pids/unicorn.pid"
