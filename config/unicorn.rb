@@ -8,7 +8,7 @@ stderr_path "#{shared_path}/log/unicorn.stderr.log"
 stdout_path "#{shared_path}/log/unicorn.stdout.log"
 
 # Set up socket location
-listen "#{shared_path}/sockets/unicorn.laluli.sock", :backlog => 64
+listen "/tmp/unicorn.laluli.sock", :backlog => 64
 
 # Set unicorn options
 worker_processes 2

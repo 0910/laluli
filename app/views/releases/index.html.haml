@@ -28,7 +28,7 @@
 		.row
 			- @videos.each do |video|
 				- if video.images.empty?
-					= link_to(video_path(video), class: 'col-sm-6 col-md-6') do
+					= link_to "#{video.link}", class: 'col-sm-6 col-md-6', data:{ title:video.name, width:1080, toggle:'lightbox', gallery:'multiimages' } do
 						.item{:style => "background-image: url(image-not-available.jpg)"}
 							.over
 								%p
@@ -37,7 +37,7 @@
 				- else
 					- video.images.each do |image|
 						- if image.cover == true
-							= link_to "#{video.link}", class: 'col-sm-6 col-md-6', data:{ title:video.name, toggle:'lightbox', gallery:'multiimages' } do
+							= link_to "#{video.link}", class: 'col-sm-6 col-md-6', data:{ title:video.name, width:1080, toggle:'lightbox', gallery:'multiimages' } do
 								.item
 									= image_tag(image.file.url(:medium))
 									.over

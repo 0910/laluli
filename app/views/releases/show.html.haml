@@ -6,7 +6,7 @@
 			.inside
 				= link_to('Music & Videos', releases_path)
 				%p #{@release.name} (#{@release.year})
-				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
+				= link_to("&#8592".html_safe + ' Back', releases_path, class: 'pull-right')
 		.row
 			.col-sm-6.col-md-6.release-art
 				#bx-pager

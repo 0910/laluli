@@ -153,7 +153,6 @@ GEM
     kgio (2.9.3)
     libv8 (3.16.14.11)
     lightbox-bootstrap-rails (3.3.0.2)
-    localtunnel (1.0.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -295,7 +294,6 @@ DEPENDENCIES
   jplayer-rails
   jquery-rails
   lightbox-bootstrap-rails
-  localtunnel
   morrisjs-rails
   mysql2 (~> 0.3.13)
   paperclip

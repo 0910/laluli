@@ -141,6 +141,7 @@ ready = ->
     $(document).on 'page:fetch', ->
       $('#primary-content').addClass 'animated'
       $('#primary-content').addClass 'fadeOutUp'
+      $('.sc-player.playing a.sc-pause').click()
       return
 
     # Toggle Nav on Click
