@@ -367,6 +367,15 @@ ul{
 .col-xs-4.instagrid{
 	padding: 1px;
 }
+.item.lookbookimg{
+	background-image: image-url('lookbook.jpg');
+}
+.item.performancesimg{
+	background-image: image-url('performances.jpg');
+}
+.item.personalimg{
+	background-image: image-url('personal.jpg');
+}
 body.show{
 	.item{
 		position: relative;
