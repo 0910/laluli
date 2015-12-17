@@ -1,4 +1,5 @@
-= vider_tag '/assets/collections.mp4', position: '100% 100%'
+#jp_container_1.jp-video
+	#jquery_jplayer_1
 .container
 	.row.content#primary-content
 		.row.title
@@ -18,9 +19,7 @@
 						- collection.images.each do |image|
 							- if image.cover == true
 								= link_to(collection_path(collection)) do
-									.item.lazy{"data-original" => image.file.url(:medium), :style => "background-image: url(#{image.file.url(:medium)});"}
+									.item{:style => "background-image: url(#{image.file.url(:medium)});"}
 										.over
 											%p
 												#{collection.name}
-:javascript
-	$('body').jpreLoader();
