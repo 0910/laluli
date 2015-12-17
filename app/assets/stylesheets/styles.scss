@@ -21,6 +21,23 @@ body{
 	background-attachment: fixed;
 	font-size: 11px;
 }
+#primary-content{
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+	-webkit-transition: 1s ease all;
+	transition: 1s ease all;
+	opacity: 0;
+}
+#primary-content.loaded{
+	-webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+#primary-content.waiting{
+	-webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+}
 a:focus {
     outline: medium none;
 }
@@ -489,13 +506,15 @@ body.show{
 	right:-90px;
 }
 .modal.in .modal-dialog {
-    transform: translate(0px, -50%);
-    -ms-transform: translate(0,-50%); /* IE 9 */
-    -webkit-transform: translate(0,-50%); /* Safari */
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Safari */
 }
 .modal-dialog {
     margin: 0 auto;
     top: 50%;
+    left: 50%;
+    position: absolute;
 }
 @media (min-width: 767px){
 	.col-xs-4.instagrid{

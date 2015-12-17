@@ -37,7 +37,6 @@ gem 'geocoder'
 gem 'friendly_id'
 gem 'country_select'
 gem 'lightbox-bootstrap-rails'
-gem "animate-rails"
 gem 'jplayer-rails'
 
 

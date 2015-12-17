@@ -30,3 +30,12 @@
 			= image_tag('toggle-menu.png')
 		= yield
 	
+:javascript
+	$('body').jpreLoader({
+		loaderVPos: '50%',
+		autoClose: true,
+		showPercentage: false,
+	}, function() {
+		$('#primary-content').addClass('loaded');
+		$('.sc-player.playing a.sc-pause').click();
+	});

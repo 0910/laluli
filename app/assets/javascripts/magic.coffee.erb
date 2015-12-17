@@ -8,7 +8,8 @@ ready = ->
     else
       # Do things on Nav Open
       $('.navigation').addClass 'show'
-      $('#jquery_jplayer_menu').jPlayer('play');
+      if $(window).width() >= 1200
+        $('#jquery_jplayer_menu').jPlayer('play');
     return
 
   switchVideo = (section) ->
@@ -30,6 +31,7 @@ ready = ->
           supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
+          preload: 'auto'
 
         $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
           $('.toggle-nav').click()
@@ -53,6 +55,7 @@ ready = ->
           supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
+          preload: 'auto'
 
       when "stylings"
         videomp4 = "<%= asset_path('stylings.mp4') %>"
@@ -71,6 +74,7 @@ ready = ->
           supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
+          preload: 'auto'
 
       when "interiors"
         videomp4 = "<%= asset_path('interior.mp4') %>"
@@ -89,6 +93,7 @@ ready = ->
           supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
+          preload: 'auto'
 
       when "releases"
         videomp4 = "<%= asset_path('releases.mp4') %>"
@@ -107,6 +112,7 @@ ready = ->
           supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
+          preload: 'auto'
           
     return    
 
@@ -127,6 +133,7 @@ ready = ->
       supplied: 'webmv, mp4, m4v'
       loop: true
       muted: true
+      preload: 'auto'
 
   $ ->
     section = $('body').attr('id')
@@ -134,21 +141,9 @@ ready = ->
     menuAnimation()
     Turbolinks.pagesCached(0)
 
-    $(document).on 'page:change', ->
-      $('#primary-content').addClass 'animated'
-      $('#primary-content').addClass 'fadeInUp'
-
-      return
     $(document).on 'page:fetch', ->
-      $('#primary-content').addClass 'animated'
-      $('#primary-content').addClass 'fadeOutUp'
-      $('.sc-player.playing a.sc-pause').click()
-      return
-
-    $(document).on 'page:restore', ->
-      $('#primary-content').addClass 'animated'
-      $('#primary-content').removeClass 'fadeOutUp'
-      $('#primary-content').addClass 'fadeInUp'
+      $('#primary-content').removeClass('loaded');
+      $('#primary-content').addClass('waiting');
       return
 
     # Toggle Nav on Click
