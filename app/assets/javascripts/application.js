@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
@@ -21,4 +22,6 @@
 //= require jquery.jplayer
 //= require soundcloud.player.api
 //= require sc-player
+//= require jquery.lazyload
+//= require jpreLoader.min
 //= require_tree .

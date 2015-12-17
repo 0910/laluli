@@ -2,15 +2,14 @@ html{
 	height: 100%;
 	width: 100%;
 }
-#vider-element {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -1000;
+video{
+	display: none;
+}
+#jp_container_menu{
+	display: none;
+}
+#jp_container{
+	display: none;
 }
 body{
 	font-weight: 200;
@@ -181,7 +180,11 @@ ul{
 	}
 }
 .navigation{
-	background: rgba(203,119,124, 0.95);
+	background-color: rgba(203,119,124, 0.95);
+	background-image: image-url('menu.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -526,6 +529,15 @@ body.show{
 	}
 }
 @media (min-width: 1200px){
+	video{
+		display: block;
+	}
+	#jp_container_menu{
+		display: block;
+	}
+	#jp_container{
+		display: block;
+	}
 	.jp-video video, .jp-audio, .jp-controls-holder {
 		width: 100% !important;
 		height: auto !important;

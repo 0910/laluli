@@ -4,7 +4,7 @@ ready = ->
     if $('.navigation').hasClass('show')
       # Do things on Nav Close
       $('.navgation').removeClass 'show'
-      $('#jquery_jplayer_menu').jPlayer('stop');
+     
     else
       # Do things on Nav Open
       $('.navigation').addClass 'show'
@@ -121,7 +121,7 @@ ready = ->
           m4v: menuvideomp4
           webmv: menuvideowebm
           m4v: menuvideom4v
-          poster: menuvideojpg).jPlayer 'play'
+          poster: menuvideojpg)
         return
       swfPath: '/js'
       supplied: 'webmv, mp4, m4v'
@@ -132,6 +132,7 @@ ready = ->
     section = $('body').attr('id')
     switchVideo(section)
     menuAnimation()
+    Turbolinks.pagesCached(0)
 
     $(document).on 'page:change', ->
       $('#primary-content').addClass 'animated'
@@ -142,6 +143,12 @@ ready = ->
       $('#primary-content').addClass 'animated'
       $('#primary-content').addClass 'fadeOutUp'
       $('.sc-player.playing a.sc-pause').click()
+      return
+
+    $(document).on 'page:restore', ->
+      $('#primary-content').addClass 'animated'
+      $('#primary-content').removeClass 'fadeOutUp'
+      $('#primary-content').addClass 'fadeInUp'
       return
 
     # Toggle Nav on Click

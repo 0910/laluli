@@ -1,17 +1,15 @@
-#jp_container_1.jp-video
-	#jquery_jplayer_1
+= vider_tag '/assets/collections.mp4', position: '100% 100%'
 .container
 	.row.content#primary-content
 		.row.title
 			.inside
 				= link_to('Collections', collections_path)
-				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
 		.row
 			- @collections.each do |collection|
 				.col-sm-4.col-md-4
 					- if collection.images.empty?
 						= link_to(collection_path(collection)) do
-							.item{:style => "background-image: url(image-not-available.jpg)"}
+							.item.lazy{:style => "background-image: url(image-not-available.jpg)"}
 								.over
 									%p
 										#{collection.name}
@@ -20,9 +18,9 @@
 						- collection.images.each do |image|
 							- if image.cover == true
 								= link_to(collection_path(collection)) do
-									.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+									.item.lazy{"data-original" => image.file.url(:medium), :style => "background-image: url(#{image.file.url(:medium)});"}
 										.over
 											%p
 												#{collection.name}
-
-												
+:javascript
+	$('body').jpreLoader();

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'menu/index'
+
   get 'about/index'
 
   root to: "home#index"

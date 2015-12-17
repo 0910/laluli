@@ -5,7 +5,6 @@
 		.row.title
 			.inside
 				= link_to('Interiors', interiors_path)
-				= link_to("&#8592".html_safe + ' Back', root_path, class: 'pull-right')
 		.row
 			- @interiors.each do |interior|
 				.col-sm-4.col-md-4

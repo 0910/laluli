@@ -9,4 +9,29 @@
 	.toggle-nav{
 		display: none;
 	}
+	.navigation{
+		opacity: 1;
+		z-index: 10000;
+		a:nth-child(odd){
+			left: 0;
+		}
+		a:nth-child(even){
+			right: 0;
+		}
+		a{
+			opacity: 1;
+		}
+	}
+}
+
+@media (min-width: 1200px){
+	.home{
+		.navigation{
+			opacity: 0;
+		}
+		.navigation.show{
+			opacity: 1;
+			z-index: 10000;
+		}
+	}
 }
