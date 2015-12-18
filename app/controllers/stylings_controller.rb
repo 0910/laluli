@@ -3,8 +3,6 @@ class StylingsController < ApplicationController
   end
   def show
   	@styling = Styling.find(params[:id])
-    @previous = Styling.where("id < ?", params[:id]).order(:id).first   
-    @next = Styling.where("id > ?", params[:id]).order(:id).first
   end
   def lookbooks
     @lookbook = true
