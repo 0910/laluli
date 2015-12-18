@@ -1,0 +1,15 @@
+.navigation
+	= vider_tag '/assets/menu.mp4', position: '100% 100%'
+	.vcenter
+		= link_to(root_path) do
+			= image_tag('menu_home.png')
+		= link_to(about_index_path) do
+			= image_tag('menu_about.png')
+		= link_to(stylings_path) do
+			= image_tag('menu_styling.png')
+		= link_to(interiors_path) do
+			= image_tag('menu_interior.png')
+		= link_to(collections_path) do
+			= image_tag('menu_collections.png')
+		= link_to(releases_path) do
+			= image_tag('menu_music.png')
