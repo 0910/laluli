@@ -22,5 +22,5 @@
 //= require jquery.jplayer
 //= require soundcloud.player.api
 //= require sc-player
-//= require jpreloader.min
+//= require jpreloader
 //= require_tree .
