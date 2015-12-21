@@ -2,10 +2,27 @@ body{
 	display:none;
 }
 #jpreOverlay {
-	background-image: image-url('menu.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+.home #jpreOverlay {
+	background-image: image-url('home.jpg');
+}
+.stylings #jpreOverlay {
+	background-image: image-url('stylings.jpg');
+}
+.about #jpreOverlay {
+	background-image: image-url('dollheads.jpg');
+}
+.collections #jpreOverlay {
+	background-image: image-url('collections.jpg');
+}
+.interiors #jpreOverlay {
+	background-image: image-url('interiors.jpg');
+}
+.releases #jpreOverlay {
+	background-image: image-url('releases.jpg');
 }
 #jpreSlide{
 	font-size:22px;

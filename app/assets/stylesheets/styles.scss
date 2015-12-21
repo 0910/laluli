@@ -505,16 +505,8 @@ body.show{
 .ekko-lightbox .glyphicon-chevron-right{
 	right:-90px;
 }
-.modal.in .modal-dialog {
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%,-50%); /* IE 9 */
-    -webkit-transform: translate(-50%,-50%); /* Safari */
-}
-.modal-dialog {
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    position: absolute;
+.modal-dialog{
+	margin: 0 auto;
 }
 @media (min-width: 767px){
 	.col-xs-4.instagrid{
