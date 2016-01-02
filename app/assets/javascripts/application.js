@@ -18,9 +18,9 @@
 //= require bootstrap
 //= require bxslider
 //= require magic
-//= require lightbox-bootstrap
 //= require jquery.jplayer
 //= require soundcloud.player.api
 //= require sc-player
 //= require jpreloader
+//= require swipebox
 //= require_tree .

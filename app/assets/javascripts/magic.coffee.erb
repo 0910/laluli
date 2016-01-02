@@ -38,6 +38,25 @@ ready = ->
           $('#jquery_jplayer_menu').jPlayer 'play'
           return
 
+      when "about"
+        videomp4 = "<%= asset_path('about.mp4') %>"
+        videowebm = "<%= asset_path('about.webm') %>"
+        videom4v = "<%= asset_path('about.m4v') %>"
+        videojpg = "<%= asset_path('about.jpg') %>"
+        $('#jquery_jplayer_1').jPlayer
+          ready: ->
+            $(this).jPlayer('setMedia',
+              mp4: videomp4
+              webmv: videowebm
+              m4v: videom4v
+              poster: videojpg).jPlayer 'play'
+            return
+          swfPath: '/js'
+          supplied: 'webmv, mp4, m4v'
+          loop: true
+          muted: true
+          preload: 'auto'
+
       when "collections"
         videomp4 = "<%= asset_path('collections.mp4') %>"
         videowebm = "<%= asset_path('collections.webm') %>"

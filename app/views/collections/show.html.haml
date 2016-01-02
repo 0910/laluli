@@ -9,14 +9,16 @@
 				= link_to("&#8592".html_safe + ' Back', collections_path, class: 'pull-right')
 		.row
 			.col-md-12.thumbs
-				.row#bx-pager
+				.row
 					- if @collection.images.empty?
-						= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
+						= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
 							.item{:style => "background-image: url(image-not-available.jpg)"}
 					- else
 						- @collection.images.each do |image|
-							= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3', data:{ title:@collection.name, toggle:'lightbox', gallery:'multiimages' } do
+							= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
 								.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 									.over
 										%p
 											ZOOM IT
+:javascript
+	$('.swipebox').swipebox();

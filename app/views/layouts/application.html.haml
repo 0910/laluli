@@ -10,6 +10,7 @@
 			= yield(:head)
 
 	%body{:class => "#{controller_name} #{action_name}", :id => "#{controller_name}"}
+		.fixed-bg
 		.navigation
 			.vcenter
 				= link_to(root_path) do

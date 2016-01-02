@@ -21,11 +21,13 @@
 				.row
 					%h1 Tracklist
 				.row
-					%a.sc-player(href="#{@release.soundcloud_link}")
+					= link_to('', @release.soundcloud_link, class: 'sc-player')
 
 :javascript
 	$(function() {
-		$('a.sc-player, div.sc-player').scPlayer();
+		$('a.sc-player').scPlayer({
+			apiKey: '7286cfd338dbd96f84442822cb74c99f'
+		});
 		$('#bx-pager').bxSlider({
 			mode: 'fade',
 			auto: true,
