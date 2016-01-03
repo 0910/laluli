@@ -40,9 +40,8 @@ a:focus {
 /* backgrounds */
 
 body  .fixed-bg{
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-position: top center;
-	background-attachment: fixed;
 	z-index: -1100;
 	position: fixed;
 	width: 100%;
@@ -52,19 +51,19 @@ body.home .fixed-bg{
 	background-image: image-url('intro.jpg');
 }
 body.about .fixed-bg{
-	background-image: image-url('about.jpg');
+	background-image: image-url('about_mobile.jpg');
 }
 body.stylings .fixed-bg{
-	background-image: image-url('stylings.jpg');
+	background-image: image-url('stylings_mobile.jpg');
 }
 body.collections .fixed-bg{
-	background-image: image-url('collections.jpg');
+	background-image: image-url('collections_mobile.jpg');
 }
 body.interiors .fixed-bg{
-	background-image: image-url('interiors.jpg');
+	background-image: image-url('interiors_mobile.jpg');
 }
 body.releases .fixed-bg{
-	background-image: image-url('releases.jpg');
+	background-image: image-url('releases_mobile.jpg');
 }
 
 body.home.index{
@@ -530,6 +529,24 @@ body.show{
 	}
 }
 @media (min-width: 767px){
+	body.home .fixed-bg{
+		background-image: image-url('intro.jpg');
+	}
+	body.about .fixed-bg{
+		background-image: image-url('about.jpg');
+	}
+	body.stylings .fixed-bg{
+		background-image: image-url('stylings.jpg');
+	}
+	body.collections .fixed-bg{
+		background-image: image-url('collections.jpg');
+	}
+	body.interiors .fixed-bg{
+		background-image: image-url('interiors.jpg');
+	}
+	body.releases .fixed-bg{
+		background-image: image-url('releases.jpg');
+	}
 	.col-xs-4.instagrid{
 		padding: 0px 15px;
 	}
