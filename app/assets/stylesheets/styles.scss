@@ -8,7 +8,7 @@ video{
 #jp_container_menu{
 	display: none;
 }
-#jp_container{
+#jp_container_1{
 	display: none;
 }
 body{
@@ -616,7 +616,7 @@ body.show{
 	#jp_container_menu{
 		display: block;
 	}
-	#jp_container{
+	#jp_container_1{
 		display: block;
 	}
 	.jp-video video, .jp-audio, .jp-controls-holder {
