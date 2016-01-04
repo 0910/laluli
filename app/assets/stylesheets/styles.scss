@@ -253,20 +253,18 @@ ul{
 		z-index: 9999;
 	}
 	.social{
-		text-align: center;
-		margin-top: 20px;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
 		a {
-			background-color: #fff500;
-			border-radius: 100%;
-			color: #000;
-			display: inline-block;
+			color: #fff;
+			float: left;
 			font-size: 15px;
-			height: 30px;
-			line-height: 30px;
+			height: 20px;
+			line-height: 20px;
 			vertical-align: middle;
-			width: 30px;
-			margin: 0 2px;
-			box-shadow: 0 1px 5px #000;
+			width: 20px;
+			margin: 0 0 0 10px;
 		}
 	}
 }
@@ -597,13 +595,11 @@ body.show{
 @media (min-width: 1200px){
 	.navigation{
 		.social{
-			text-align: center;
-			margin-top: 20px;
 			a {
 				font-size: 18px;
-				height: 35px;
-				line-height: 35px;
-				width: 35px;
+				height: 20px;
+				line-height: 20px;
+				width: 20px;
 			}
 		}
 	}

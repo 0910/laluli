@@ -25,13 +25,15 @@
 					= image_tag('menu_collections.png')
 				= link_to(releases_path) do
 					= image_tag('menu_music.png')
-				.social
-					= link_to('https://www.facebook.com/LaLuli.and.the.explosivo.Paz', target: "_blank") do
-						= icon('facebook')
-					= link_to('https://www.youtube.com/user/lalulimusic', target: "_blank") do
-						= icon('youtube')
-					= link_to('https://soundcloud.com/lalulimusic', target: "_blank") do
-						= icon('soundcloud')
+			.social
+				= link_to('https://www.facebook.com/LaLuli.and.the.explosivo.Paz', target: "_blank", class: 'fbicon') do
+					= icon('facebook-square')
+				= link_to('https://www.youtube.com/user/lalulimusic', target: "_blank", class: 'yticon') do
+					= icon('youtube')
+				= link_to('https://soundcloud.com/lalulimusic', target: "_blank", class: 'scicon') do
+					= icon('soundcloud')
+				= link_to('https://www.instagram.com/lulianak/', target: "_blank", class: 'inicon') do
+					= icon('instagram')
 			#jp_container_menu.jp-video
 				#jquery_jplayer_menu
 		%a.toggle-nav
