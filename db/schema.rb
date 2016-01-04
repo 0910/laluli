@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128181509) do
+ActiveRecord::Schema.define(version: 20160104002943) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20151128181509) do
     t.boolean  "cover",             limit: 1,   default: false
     t.integer  "position",          limit: 4
     t.integer  "video_id",          limit: 4
+    t.integer  "year",              limit: 4
   end
 
   add_index "images", ["collection_id"], name: "index_images_on_collection_id", using: :btree

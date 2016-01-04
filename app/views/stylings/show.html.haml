@@ -14,11 +14,11 @@
 			.col-md-12.thumbs
 				.row
 					- if @styling.images.empty?
-						= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
+						= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox', :title => "#{image.year}" do
 							.item{:style => "background-image: url(image-not-available.jpg)"}
 					- else
 						- @styling.images.each do |image|
-							= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
+							= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox', :title => "#{image.year}" do
 								.item{:style => "background-image: url(#{image.file.url(:medium)})"}
 									.over
 										%p
