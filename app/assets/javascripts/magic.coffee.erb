@@ -17,16 +17,18 @@ ready = ->
       when "home"
         videomp4 = "<%= asset_path('intro.mp4') %>"
         videowebm = "<%= asset_path('intro.webm') %>"
+        videom4v = "<%= asset_path('intro.m4v') %>"
         videojpg = "<%= asset_path('intro.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -39,16 +41,18 @@ ready = ->
       when "about"
         videomp4 = "<%= asset_path('about.mp4') %>"
         videowebm = "<%= asset_path('about.webm') %>"
+        videom4v = "<%= asset_path('about.m4v') %>"
         videojpg = "<%= asset_path('about.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -56,16 +60,18 @@ ready = ->
       when "collections"
         videomp4 = "<%= asset_path('collections.mp4') %>"
         videowebm = "<%= asset_path('collections.webm') %>"
+        videom4v = "<%= asset_path('collections.m4v') %>"
         videojpg = "<%= asset_path('collections.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -73,16 +79,18 @@ ready = ->
       when "stylings"
         videomp4 = "<%= asset_path('stylings.mp4') %>"
         videowebm = "<%= asset_path('stylings.webm') %>"
+        videom4v = "<%= asset_path('stylings.m4v') %>"
         videojpg = "<%= asset_path('stylings.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -90,16 +98,18 @@ ready = ->
       when "interiors"
         videomp4 = "<%= asset_path('interior.mp4') %>"
         videowebm = "<%= asset_path('interior.webm') %>"
+        videom4v = "<%= asset_path('interior.m4v') %>"
         videojpg = "<%= asset_path('interiors.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -107,16 +117,18 @@ ready = ->
       when "releases"
         videomp4 = "<%= asset_path('releases.mp4') %>"
         videowebm = "<%= asset_path('releases.webm') %>"
+        videom4v = "<%= asset_path('releases.m4v') %>"
         videojpg = "<%= asset_path('releases.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
               mp4: videomp4
               webmv: videowebm
+              m4v: videom4v
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
-          supplied: 'webmv, mp4'
+          supplied: 'webmv, mp4, m4v'
           loop: true
           muted: true
           preload: 'auto'
@@ -126,15 +138,18 @@ ready = ->
   menuAnimation = ->
     menuvideomp4 = "<%= asset_path('menu.mp4') %>"
     menuvideowebm = "<%= asset_path('menu.webm') %>"
+    menuvideom4v = "<%= asset_path('menu.m4v') %>"
     menuvideojpg = "<%= asset_path('menu.jpg') %>"
     $('#jquery_jplayer_menu').jPlayer
       ready: ->
         $(this).jPlayer('setMedia',
+          m4v: menuvideomp4
           webmv: menuvideowebm
+          m4v: menuvideom4v
           poster: menuvideojpg)
         return
       swfPath: '/js'
-      supplied: 'webmv, mp4'
+      supplied: 'webmv, mp4, m4v'
       loop: true
       muted: true
       preload: 'auto'
