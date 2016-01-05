@@ -11,7 +11,7 @@
 				- else
 					= link_to("&#8592".html_safe + ' Back', stylings_path, class: 'pull-right')
 		.row
-			.col-md-12.thumbs
+			.thumbs
 				- if @styling.images.empty?
 					= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox', :title => "#{image.year}" do
 						.item{:style => "background-image: url(image-not-available.jpg)"}

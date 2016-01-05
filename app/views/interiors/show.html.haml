@@ -8,7 +8,7 @@
 				%p #{@interior.name}
 				= link_to("&#8592".html_safe + ' Back', interiors_path, class: 'pull-right')
 		.row
-			.col-md-12.thumbs
+			.thumbs
 				- if @interior.images.empty?
 					= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
 						.item{:style => "background-image: url(image-not-available.jpg)"}

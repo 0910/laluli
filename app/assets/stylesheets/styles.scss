@@ -578,16 +578,17 @@ body.show{
 			}
 			a.pull-right{
 				display: block;
+				margin-right: 60px;
 			}
 		}
 	}
 }
 @media (min-width: 1130px){
 	.container{
-		width: 1030px;
+		width: 1170px;
 	}
 	.toggle-nav{
-		right: 60px;
+		right: 45px;
 		top: 28px;
 		background-image: image-url('toggle-menu.png');
 	}
@@ -641,6 +642,6 @@ body.show{
 		font-size: 11px;
 	}
 	.toggle-nav{
-		right: 135px;
+		right: 125px;
 	}
 }
