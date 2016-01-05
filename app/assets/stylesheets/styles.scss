@@ -313,7 +313,7 @@ body.collections{
 		vertical-align: middle;
 		margin: 0;
 		a,p{
-			font-weight: 200;
+			font-weight: 100;
 			font-size: 2.5em;
 			margin: 0;
 			display: inline-block;
@@ -553,11 +553,13 @@ body.show{
 	body.stylings .fixed-bg{
 		background-image: image-url('stylings.jpg');
 	}
-	body.collections .fixed-bg{
-		background-image: image-url('collections.jpg');
+	body.collections{
 		.toggle-nav{
 			background-image: image-url('toggle-menu.png');
 		}
+	}
+	body.collections .fixed-bg{
+		background-image: image-url('collections.jpg');
 	}
 	body.interiors .fixed-bg{
 		background-image: image-url('interiors.jpg');
