@@ -15,7 +15,7 @@ body{
 	font-weight: 200;
 	color: #000;
 	background-color: #000;
-	font-size: 8px;
+	font-size: 9px;
 }
 #primary-content{
 	-webkit-transform: translate3d(0, 100%, 0);
@@ -194,14 +194,19 @@ ul{
 	height: 30px;
 	padding: 0;
 	position: absolute;
-	right: 6px;
+	right: 17px;
 	text-align: center;
-	top: 28px;
-	width: 50px;
+	top: 29px;
+	width: 25px;
 	z-index: 999;
 	img{
 		width: 100%;
 		height: auto;
+	}
+}
+body.collections{
+	.toggle-nav{
+		background-image: image-url('toggle-menu-mobile-collections.png');
 	}
 }
 .navigation{
@@ -529,7 +534,7 @@ body.show{
 }
 @media (min-width: 359px){
 	body{
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 @media (min-width: 767px){
@@ -538,6 +543,7 @@ body.show{
 	}
 	.toggle-nav{
 		right: 26px;
+		width: 50px;
 	}
 	body.home .fixed-bg{
 		background-image: image-url('intro.jpg');
@@ -550,6 +556,9 @@ body.show{
 	}
 	body.collections .fixed-bg{
 		background-image: image-url('collections.jpg');
+		.toggle-nav{
+			background-image: image-url('toggle-menu.png');
+		}
 	}
 	body.interiors .fixed-bg{
 		background-image: image-url('interiors.jpg');
@@ -593,7 +602,7 @@ body.show{
 	}
 	.toggle-nav{
 		right: 45px;
-		top: 28px;
+		top: 30px;
 		background-image: image-url('toggle-menu.png');
 	}
 	.navigation{
@@ -607,7 +616,7 @@ body.show{
 		}
 	}
 	body{
-		font-size: 10px;
+		font-size: 11px;
 	}
 	body .fixed-bg{
 		background-size: cover;
@@ -643,7 +652,7 @@ body.show{
 }
 @media (min-width: 1300px){
 	body{
-		font-size: 11px;
+		font-size: 12px;
 	}
 	.toggle-nav{
 		right: 125px;
