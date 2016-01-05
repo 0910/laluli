@@ -338,6 +338,7 @@ ul{
 	}
 }
 .thumbs{
+	padding: 0 15px;
 	img{
 		width:100%;
 		height:auto;
@@ -532,6 +533,9 @@ body.show{
 	}
 }
 @media (min-width: 767px){
+	.thumbs{
+		padding: 0;
+	}
 	.toggle-nav{
 		right: 26px;
 	}
