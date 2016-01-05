@@ -163,6 +163,7 @@ ready = ->
     $(document).on 'page:fetch', ->
       $('#primary-content').removeClass('loaded');
       $('#primary-content').addClass('waiting');
+      $('.sc-player.playing a.sc-pause').click();
       return
 
     # Toggle Nav on Click

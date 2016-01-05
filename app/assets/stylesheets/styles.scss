@@ -51,7 +51,7 @@ body.home .fixed-bg{
 	background-image: image-url('intro.jpg');
 }
 body.about .fixed-bg{
-	background-image: image-url('about_mobile.jpg');
+	background-image: image-url('about_mobile2.jpg');
 }
 body.stylings .fixed-bg{
 	background-image: image-url('stylings.jpg');
@@ -165,7 +165,7 @@ ul{
 	margin:0;
 }
 .container{
-	width:80%;
+	width:90%;
 }
 .bgs{
 	position: fixed;
@@ -185,14 +185,18 @@ ul{
 	}
 }
 .toggle-nav {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: image-url('toggle-menu-mobile.png');
 	cursor: pointer;
 	font-size: 3em;
 	height: 30px;
 	padding: 0;
 	position: absolute;
-	right: 30px;
+	right: 6px;
 	text-align: center;
-	top: 15px;
+	top: 28px;
 	width: 50px;
 	z-index: 999;
 	img{
@@ -230,19 +234,6 @@ ul{
     		width: 100%;
     	}
     }
-    a.toggle-nav{
-		cursor: pointer;
-	    font-size: 3em;
-	    position: absolute;
-	    right: 57px;
-	    text-align: right;
-	    top: 40px;
-	    width: 50px;
-	    img{
-			width: 50%;
-			height: auto;
-		}
-	}
     a:nth-child(odd){
     	left: -9999px;
     }
@@ -279,9 +270,6 @@ ul{
     }
     a:nth-child(even){
     	right: 0;
-    }
-    a.toggle-nav{
-    	right:57px;
     }
     a:hover{
 		text-decoration: line-through;
@@ -320,7 +308,7 @@ ul{
 		vertical-align: middle;
 		margin: 0;
 		a,p{
-			font-weight: 300;
+			font-weight: 200;
 			font-size: 2.5em;
 			margin: 0;
 			display: inline-block;
@@ -333,7 +321,7 @@ ul{
 		}
 		p{
 			color: #e3e3e3;
-			font-weight: 200;
+			font-weight: 100;
 		}
 		a.pull-right{
 			display: none;
@@ -544,6 +532,9 @@ body.show{
 	}
 }
 @media (min-width: 767px){
+	.toggle-nav{
+		right: 26px;
+	}
 	body.home .fixed-bg{
 		background-image: image-url('intro.jpg');
 	}
@@ -592,7 +583,15 @@ body.show{
 		}
 	}
 }
-@media (min-width: 1200px){
+@media (min-width: 1130px){
+	.container{
+		width: 1030px;
+	}
+	.toggle-nav{
+		right: 60px;
+		top: 28px;
+		background-image: image-url('toggle-menu.png');
+	}
 	.navigation{
 		.social{
 			a {
@@ -602,6 +601,9 @@ body.show{
 				width: 20px;
 			}
 		}
+	}
+	body{
+		font-size: 10px;
 	}
 	body .fixed-bg{
 		background-size: cover;
@@ -623,9 +625,6 @@ body.show{
 		width: 100% !important;
 		height: auto !important;
 	}
-	.container{
-		width: calc(100vw - 270px);
-	}
 	.vcenter{
 		width: 50%;
 	}
@@ -637,19 +636,12 @@ body.show{
 			height: 405px;
 		}
 	}
+}
+@media (min-width: 1300px){
+	body{
+		font-size: 11px;
+	}
 	.toggle-nav{
 		right: 135px;
-	}
-	.modal-header{
-		display: none;
-	}
-	.ekko-lightbox .glyphicon-chevron-left{
-		left:-90px;
-	}
-	.ekko-lightbox .glyphicon-chevron-right{
-		right:-90px;
-	}
-	.ekko-lightbox-nav-overlay a{
-		opacity: 0;
 	}
 }

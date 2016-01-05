@@ -9,16 +9,15 @@
 				= link_to("&#8592".html_safe + ' Back', interiors_path, class: 'pull-right')
 		.row
 			.col-md-12.thumbs
-				.row
-					- if @interior.images.empty?
-						= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
-							.item{:style => "background-image: url(image-not-available.jpg)"}
-					- else
-						- @interior.images.each do |image|
-							= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
-								.item{:style => "background-image: url(#{image.file.url(:medium)})"}
-									.over
-										%p
-											ZOOM IT
+				- if @interior.images.empty?
+					= link_to "#{image.file.url(:medium)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3', data:{ toggle:'lightbox', gallery:'multiimages' } do
+						.item{:style => "background-image: url(image-not-available.jpg)"}
+				- else
+					- @interior.images.each do |image|
+						= link_to "#{image.file.url(:large)}", class: 'instagrid col-xs-4 col-sm-4 col-md-3 swipebox' do
+							.item{:style => "background-image: url(#{image.file.url(:medium)})"}
+								.over
+									%p
+										ZOOM IT
 :javascript
 	$('.swipebox').swipebox();
