@@ -4,6 +4,12 @@
 		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
 			%title
 				La Luli
+			%meta{ :name => "description", :content => 'La Luli is a multi artist from Argentina living in NYC' }
+			%meta{ :property => 'og:title', :content => 'La Luli' }
+			%meta{ :property => 'og:site_name', :content => 'La luli' }
+			%meta{ :property => 'og:url', :content => 'http://www.laluli.net' }
+			%meta{ :property => 'og:description', :content => 'La Luli is a multi artist from Argentina living in NYC' }
+			%meta{ :property => 'og:image', :content => 'http://www.laluli.net/public/fb.jpg' }
 			= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 			= javascript_include_tag 'application', 'data-turbolinks-track' => true
 			= csrf_meta_tags
