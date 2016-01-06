@@ -15,15 +15,14 @@ ready = ->
   switchVideo = (section) ->
     switch section
       when "home"
-        videowebm = "<%= asset_path('intro.webm') %>"
         videom4v = "<%= asset_path('intro.m4v') %>"
+        videowebm = "<%= asset_path('intro.webm') %>"
         videojpg = "<%= asset_path('intro.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -38,15 +37,15 @@ ready = ->
           return
 
       when "about"
-        videowebm = "<%= asset_path('about.webm') %>"
         videom4v = "<%= asset_path('about.m4v') %>"
+        videowebm = "<%= asset_path('about.webm') %>"
         videojpg = "<%= asset_path('about.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
+              
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -56,15 +55,15 @@ ready = ->
           preload: 'auto'
 
       when "collections"
-        videowebm = "<%= asset_path('collections.webm') %>"
         videom4v = "<%= asset_path('collections.m4v') %>"
+        videowebm = "<%= asset_path('collections.webm') %>"
         videojpg = "<%= asset_path('collections.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
+              
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -74,15 +73,15 @@ ready = ->
           preload: 'auto'
 
       when "stylings"
-        videowebm = "<%= asset_path('stylings.webm') %>"
         videom4v = "<%= asset_path('stylings.m4v') %>"
+        videowebm = "<%= asset_path('stylings.webm') %>"
         videojpg = "<%= asset_path('stylings.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
+              
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -92,15 +91,15 @@ ready = ->
           preload: 'auto'
 
       when "interiors"
-        videowebm = "<%= asset_path('interior.webm') %>"
         videom4v = "<%= asset_path('interior.m4v') %>"
+        videowebm = "<%= asset_path('interior.webm') %>"
         videojpg = "<%= asset_path('interiors.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
+              
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -110,15 +109,15 @@ ready = ->
           preload: 'auto'
 
       when "releases"
-        videowebm = "<%= asset_path('releases.webm') %>"
         videom4v = "<%= asset_path('releases.m4v') %>"
+        videowebm = "<%= asset_path('releases.webm') %>"
         videojpg = "<%= asset_path('releases.jpg') %>"
         $('#jquery_jplayer_1').jPlayer
           ready: ->
             $(this).jPlayer('setMedia',
-              
-              webmv: videowebm
               m4v: videom4v
+              webmv: videowebm
+              
               poster: videojpg).jPlayer 'play'
             return
           swfPath: '/js'
@@ -130,14 +129,14 @@ ready = ->
     return    
 
   menuAnimation = ->
-    menuvideowebm = "<%= asset_path('menu.webm') %>"
     menuvideom4v = "<%= asset_path('menu.m4v') %>"
+    menuvideowebm = "<%= asset_path('menu.webm') %>"
     menuvideojpg = "<%= asset_path('menu.jpg') %>"
     $('#jquery_jplayer_menu').jPlayer
       ready: ->
         $(this).jPlayer('setMedia',
-          webmv: menuvideowebm
           m4v: menuvideom4v
+          webmv: menuvideowebm
           poster: menuvideojpg)
         return
       swfPath: '/js'
