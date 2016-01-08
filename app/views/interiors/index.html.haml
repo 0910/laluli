@@ -5,6 +5,7 @@
 		.row.title
 			.inside
 				= link_to('Interiors', interiors_path)
+				%a.toggle-nav.pull-right
 		.row
 			- @interiors.each do |interior|
 				.col-sm-4.col-md-4

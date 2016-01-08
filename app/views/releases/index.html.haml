@@ -5,6 +5,7 @@
 		.row.title
 			.inside
 				= link_to('Music & Videos', releases_path)
+				%a.toggle-nav.pull-right
 		.row
 			- @releases.each do |release|
 				.col-sm-4.col-md-4

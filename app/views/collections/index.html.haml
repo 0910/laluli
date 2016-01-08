@@ -5,6 +5,7 @@
 		.row.title
 			.inside
 				= link_to('Collections', collections_path)
+				%a.toggle-nav.pull-right
 		.row
 			- @collections.each do |collection|
 				.col-sm-4.col-md-4
