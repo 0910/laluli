@@ -32,7 +32,7 @@ ready = ->
           preload: 'auto'
 
         $('#jquery_jplayer_1').bind $.jPlayer.event.ended, (event) ->
-          $('.toggle-nav').click()
+          $('.navigation').addClass('show')
           $('#jquery_jplayer_menu').jPlayer 'play'
           return
 
