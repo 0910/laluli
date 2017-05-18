@@ -8,7 +8,7 @@ set :user,            'ubuntu'
 set :rbenv_ruby, '2.2.3'
 
 set :pty,             true
-set :use_sudo,        false
+set :use_sudo,        true
 set :stage,           :production
 set :rails_env,       :production
 set :deploy_via,      :remote_cache
